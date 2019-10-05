@@ -5,11 +5,17 @@ using UnityEngine.EventSystems;
 using OmiyaGames;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class DragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class DragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler//, IEndDragHandler
 {
-    Vector2 startDragPosition;
-    Rigidbody2D body;
+    [SerializeField]
+    Canvas uiCanvas = null;
 
+    Vector3 offsetFromMousePosition, lastMouseWorldPosition = Vector3.zero;
+    Rigidbody2D body;
+    Ray fromCamera;
+    Plane playField;
+
+    #region Properties
     public Rigidbody2D Body
     {
         get
@@ -18,35 +24,65 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         }
     }
 
-    //// Start is called before the first frame update
-    //void Start()
-    //{
+    public Camera RayCastCamera
+    {
+        get
+        {
+            return UiCanvas.worldCamera;
+        }
+    }
 
-    //}
+    public Canvas UiCanvas
+    {
+        get
+        {
+            if(uiCanvas == null)
+            {
+                uiCanvas = transform.parent.GetComponent<Canvas>();
+            }
+            return uiCanvas;
+        }
+    }
+    #endregion
 
-    //// Update is called once per frame
-    //void Update()
-    //{
-
-    //}
+    void Start()
+    {
+        // Setup the plane
+        playField = new Plane(
+            // Normal is facing away from the camera
+            (RayCastCamera.transform.forward * -1f),
+            // Position is the camera, forward by canvas plane distance
+            (RayCastCamera.transform.position + (RayCastCamera.transform.forward * UiCanvas.planeDistance)));
+    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        startDragPosition = eventData.position;
+        // get diff
+        offsetFromMousePosition = Body.transform.position - GetMouseWorldPosition(eventData.position);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        if(eventData.dragging == true)
+        if (eventData.dragging == true)
         {
-            // TODO: move the window to the new mouse position
-            Body.MovePosition(eventData.position - startDragPosition);
-            startDragPosition = eventData.position;
+            Vector3 moveTo3D = offsetFromMousePosition + GetMouseWorldPosition(eventData.position);
+            Body.MovePosition(new Vector2(moveTo3D.x, moveTo3D.y));
         }
     }
 
-    public void OnEndDrag(PointerEventData eventData)
+    //public void OnEndDrag(PointerEventData eventData)
+    //{
+    //    // Do...something?
+    //}
+
+    private Vector3 GetMouseWorldPosition(Vector3 pixelPosition)
     {
-        startDragPosition = eventData.position;
+        float distance;
+        fromCamera = RayCastCamera.ScreenPointToRay(pixelPosition);
+        if (playField.Raycast(fromCamera, out distance) == true)
+        {
+            lastMouseWorldPosition = fromCamera.GetPoint(distance);
+        }
+        return lastMouseWorldPosition;
     }
 }

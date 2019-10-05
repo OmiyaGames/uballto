@@ -38,12 +38,14 @@ public class ProceduralSpriteGenerator : MonoBehaviour
 
     public class SpriteData
     {
-        public SpriteData(Sprite sprite)
+        public SpriteData(Sprite sprite, float pixelsPerUnit)
         {
             Sprite = sprite;
+            PixelsPerUnit = pixelsPerUnit;
             Data = new byte[sprite.texture.width * sprite.texture.height];
         }
 
+        public float PixelsPerUnit { get; }
         public Sprite Sprite { get; }
         public byte[] Data { get; }
         public Texture2D Texture => Sprite.texture;
@@ -103,7 +105,7 @@ public class ProceduralSpriteGenerator : MonoBehaviour
             newSprite.name = newTexture.name;
 
             // Add the sprite into the dictionary
-            allSprites.Add(layer, new SpriteData(newSprite));
+            allSprites.Add(layer, new SpriteData(newSprite, pixelsPerUnit));
         }
     }
 
@@ -115,9 +117,16 @@ public class ProceduralSpriteGenerator : MonoBehaviour
 
             // FIXME: Test code
             SpriteData data = GetSprite(set.Layer);
-            for(int i = 0; i < data.Data.Length; ++i)
+            for (int y = 0; y < data.Height; ++y)
             {
-                data.Data[i] = 128;
+                for (int x = 0; x < data.Width; ++x)
+                {
+                    int i = Mathf.FloorToInt((y * data.Width) + x);
+                    if ((x < (data.Width * 0.25f)) && (y < (data.Height * 0.75f)))
+                    {
+                        data.Data[i] = 128;
+                    }
+                }
             }
             data.Apply();
         }

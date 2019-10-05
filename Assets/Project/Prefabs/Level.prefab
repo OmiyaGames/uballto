@@ -114,7 +114,7 @@ MonoBehaviour:
   orthogonalCamera: {fileID: 2297969470193597048}
   pixelsPerUnit: 100
   spritesToSet:
-  - mask: {fileID: 0}
+  - mask: {fileID: 8602403574964265362}
     testRenderer: {fileID: 1416769106513786078}
     layer: 0
 --- !u!1 &2983288513518605486
@@ -396,6 +396,26 @@ PrefabInstance:
     - target: {fileID: 4878912538111896, guid: 0cb066fb0f0cf4a43a8d239b0f1b221e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20458670678699176, guid: 0cb066fb0f0cf4a43a8d239b0f1b221e,
+        type: 3}
+      propertyPath: m_BackGroundColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20458670678699176, guid: 0cb066fb0f0cf4a43a8d239b0f1b221e,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.07413671
+      objectReference: {fileID: 0}
+    - target: {fileID: 20458670678699176, guid: 0cb066fb0f0cf4a43a8d239b0f1b221e,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.15727563
+      objectReference: {fileID: 0}
+    - target: {fileID: 20458670678699176, guid: 0cb066fb0f0cf4a43a8d239b0f1b221e,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.9245283
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cb066fb0f0cf4a43a8d239b0f1b221e, type: 3}

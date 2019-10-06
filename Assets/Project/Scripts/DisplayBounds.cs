@@ -20,20 +20,20 @@ public class DisplayBounds : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        ToggleActivation toggle = collision.GetComponent<ToggleActivation>();
+        IToggleActivator toggle = collision.GetComponent<IToggleActivator>();
         if(toggle != null)
         {
             gameObject.layer = 1;
-            toggle.EnterBounds(this);
+            toggle.EnterBound(this);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        ToggleActivation toggle = collision.GetComponent<ToggleActivation>();
+        IToggleActivator toggle = collision.GetComponent<IToggleActivator>();
         if (toggle != null)
         {
-            toggle.ExitBounds(this);
+            toggle.ExitBound(this);
         }
     }
 }

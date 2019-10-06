@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
-public class ToggleActivation : MonoBehaviour
+public class ToggleRigidbody : IToggleActivator
 {
     [SerializeField]
     Rigidbody2D body;
 
     Vector2 lastActiveVelocity = Vector2.zero;
     float lastAngularVelocity = 0f;
-    readonly HashSet<DisplayBounds> inBounds = new HashSet<DisplayBounds>();
 
-    public void EnterBounds(DisplayBounds bounds)
+    protected override void AfterEnterNewBound(DisplayBounds bounds)
     {
-        if (inBounds.Count == 0)
+        if (NumberOfBounds == 1)
         {
             // Turn the rigidbody into dynamic
             body.bodyType = RigidbodyType2D.Dynamic;
@@ -23,12 +22,19 @@ public class ToggleActivation : MonoBehaviour
             body.velocity = lastActiveVelocity;
             body.angularVelocity = lastAngularVelocity;
         }
-        inBounds.Add(bounds);
+
+        // Change the layer of the rigidbody
+        body.gameObject.layer = GetLayer(HighestPriorityBound.Layer).LayerIndex;
     }
 
-    public void ExitBounds(DisplayBounds bounds)
+    protected override void AfterExitExistingBound(DisplayBounds bounds)
     {
-        if ((inBounds.Remove(bounds)) && (inBounds.Count == 0))
+        if (NumberOfBounds > 0)
+        {
+            // Change the layer of the rigidbody
+            body.gameObject.layer = GetLayer(HighestPriorityBound.Layer).LayerIndex;
+        }
+        else
         {
             // Store velocity
             lastActiveVelocity = body.velocity;

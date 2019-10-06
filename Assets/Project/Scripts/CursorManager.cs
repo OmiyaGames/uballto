@@ -19,6 +19,8 @@ public class CursorManager : MonoBehaviour
     CursorInfo dragCursor;
     [SerializeField]
     CursorInfo clickCursor;
+    [SerializeField]
+    GameObject[] activateOnAwake;
 
     bool isDragDisplayed = false;
     bool isClickDisplayed = false;
@@ -39,6 +41,11 @@ public class CursorManager : MonoBehaviour
     {
         SetCursor(defaultCursor);
         instance = this;
+
+        foreach(GameObject activate in activateOnAwake)
+        {
+            activate.SetActive(true);
+        }
     }
 
     private void UpdateCursor()

@@ -24,4 +24,9 @@ public class WindowRect : MonoBehaviour
     public Vector3 TopRightPosition { get => TopRightRange.position; }
     public DragDrop DragScript { get => OmiyaGames.Utility.GetComponentCached(this, ref dragDrop); }
     public RawImage Display { get => display; }
+
+    public void OnExpandToggleChanged(bool isExpanded)
+    {
+        // FIXME: expand the dialog soon!
+    }
 }

@@ -1,12 +1,9 @@
 {
   "dependencies": {
-    "com.unity.2d.pixel-perfect": "1.0.1-preview",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.spriteshape": "2.1.0-preview.11",
     "com.unity.analytics": "3.3.2",
-    "com.unity.cinemachine": "2.3.4",
     "com.unity.connect.share": "1.0.5-preview",
-    "com.unity.inputsystem": "1.0.0-preview",
     "com.unity.mathematics": "1.1.0",
     "com.unity.package-manager-ui": "2.2.0",
     "com.unity.performance.profile-analyzer": "0.5.0-preview.1",

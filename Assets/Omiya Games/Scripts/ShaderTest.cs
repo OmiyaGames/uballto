@@ -91,8 +91,8 @@ namespace Project
         [Header("UI")]
         [SerializeField]
         private Toggle shaderCheckbox;
-        [SerializeField]
-        private Cinemachine.CinemachineFreeLook freeLookCamera;
+        //[SerializeField]
+        //private Cinemachine.CinemachineFreeLook freeLookCamera;
 
 #if UNITY_EDITOR
         private void Update()
@@ -163,7 +163,7 @@ namespace Project
             shaderCheckbox.isOn = true;
 
             // Disable the camera rotation
-            freeLookCamera.enabled = false;
+            //freeLookCamera.enabled = false;
         }
 
         public void OnChangeMaterialToggled(int index)
@@ -190,7 +190,7 @@ namespace Project
 
         public void SetFreeLookCameraEnabled(bool isEnabled)
         {
-            freeLookCamera.enabled = isEnabled;
+            //freeLookCamera.enabled = isEnabled;
         }
     }
 }

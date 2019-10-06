@@ -27,6 +27,9 @@ public class SpriteMaskEditor : MonoBehaviour
     bool isDirty = true;
 
     #region Properties
+    /// <summary>
+    /// A list of Windows scripts as child of this transform.  Sorted in reverse priority order, i.e. the last window is the last activated, and as such, has the highest priority.
+    /// </summary>
     public List<WindowInfo> AllWindows
     {
         get
@@ -53,7 +56,7 @@ public class SpriteMaskEditor : MonoBehaviour
         foreach (Transform child in transform)
         {
             WindowRect script = child.GetComponent<WindowRect>();
-            if(script != null)
+            if (script != null)
             {
                 AllWindows.Add(new WindowInfo(script));
             }
@@ -64,7 +67,7 @@ public class SpriteMaskEditor : MonoBehaviour
     private void MarkDirty(DragDrop source, UnityEngine.EventSystems.PointerEventData input, Vector2 movedTo)
     {
         WindowInfo info;
-        if(DragToWindowMap.TryGetValue(source, out info) == true)
+        if (DragToWindowMap.TryGetValue(source, out info) == true)
         {
             // Mark the corresponding window dirty
             info.IsDirty = true;
@@ -75,26 +78,27 @@ public class SpriteMaskEditor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isDirty)
+        if (isDirty)
         {
             // Update all the windows
             UpdateAllWindows();
 
             // Draw the sprite
-            foreach(ProceduralSpriteGenerator.WindowLayer layer in dirtyLayers)
+            foreach (ProceduralSpriteGenerator.WindowLayer layer in dirtyLayers)
             {
                 ProceduralSpriteGenerator.SpriteData data = ProceduralSpriteGenerator.GetSprite(layer);
 
-                // Test Code
-                for (int y = 0; y < data.Height; ++y)
+                // Go through all coordinates
+                Vector2 pixelPosition = Vector2.zero;
+                for (int i = 0; i < data.Count; ++i)
                 {
-                    for (int x = 0; x < data.Width; ++x)
+                    if (IsPixelOpaque(layer, data, i))
                     {
-                        int i = Mathf.FloorToInt((y * data.Width) + x);
-                        if ((x < (data.Width * 0.25f)) && (y < (data.Height * 0.75f)))
-                        {
-                            data[i] = 255;
-                        }
+                        data[i] = 255;
+                    }
+                    else
+                    {
+                        data[i] = 0;
                     }
                 }
             }
@@ -102,6 +106,39 @@ public class SpriteMaskEditor : MonoBehaviour
             // Re-calculate each window's rect
             isDirty = false;
         }
+    }
+
+    private bool IsPixelOpaque(ProceduralSpriteGenerator.WindowLayer layer, ProceduralSpriteGenerator.SpriteData data, int pixelIndex)
+    {
+        Vector2 pixelPosition;
+        // Convert the index to coordinates
+        pixelPosition.x = pixelIndex % data.Width;
+        pixelPosition.y = pixelIndex / data.Width;
+
+        // Go through all the windows in reverse order
+        bool isPixelOpaque = false;
+        for(int index = (AllWindows.Count - 1); index >= 0; --index)
+        {
+            // Check if this window contains this pixel
+            if (AllWindows[index].PixelRect.Contains(pixelPosition))
+            {
+                // If so, check the window's layer
+                if (layer == ProceduralSpriteGenerator.WindowLayer.None)
+                {
+                    // If it's the default layer, it should always be drawn
+                    isPixelOpaque = true;
+                }
+                else
+                {
+                    // If on a special layer, see if this window exposes this layer
+                    // The top-most window (i.e. last) should have the highest priority
+                    isPixelOpaque = ((AllWindows[index].Window.DisplayLayer & layer) != 0);
+                }
+                break;
+            }
+        }
+
+        return isPixelOpaque;
     }
 
     private void UpdateAllWindows()

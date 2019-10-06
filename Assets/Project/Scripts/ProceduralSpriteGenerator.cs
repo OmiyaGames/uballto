@@ -50,13 +50,15 @@ public class ProceduralSpriteGenerator : MonoBehaviour
             data = new byte[sprite.texture.width * sprite.texture.height];
         }
 
+        public float PixelsPerUnit { get; }
+        public Sprite Sprite { get; }
         public byte this[long index]
         {
             get => data[index];
             set => data[index] = value;
         }
-        public float PixelsPerUnit { get; }
-        public Sprite Sprite { get; }
+        public long Count { get => data.Length; }
+
         public Texture2D Texture => Sprite.texture;
         public float Width => Texture.width;
         public float Height => Texture.height;

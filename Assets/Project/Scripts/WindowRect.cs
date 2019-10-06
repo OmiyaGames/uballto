@@ -15,6 +15,12 @@ public class WindowRect : MonoBehaviour
     [SerializeField]
     RawImage display;
 
+    [Header("Toggle")]
+    [SerializeField]
+    GameObject minimizeIcons;
+    [SerializeField]
+    GameObject expandIcons;
+
     DragDrop dragDrop = null;
 
     public ProceduralSpriteGenerator.WindowLayer DisplayLayer { get => displayLayer; }
@@ -28,5 +34,7 @@ public class WindowRect : MonoBehaviour
     public void OnExpandToggleChanged(bool isExpanded)
     {
         // FIXME: expand the dialog soon!
+        minimizeIcons.SetActive(isExpanded);
+        expandIcons.SetActive(!isExpanded);
     }
 }

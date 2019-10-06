@@ -17,9 +17,15 @@ public class WindowRect : MonoBehaviour
 
     [Header("Toggle")]
     [SerializeField]
+    bool canMinimize = true;
+    [SerializeField]
+    Toggle minimizeButton;
+    [SerializeField]
     GameObject minimizeIcons;
     [SerializeField]
     GameObject expandIcons;
+    [SerializeField]
+    GameObject displayBox;
 
     DragDrop dragDrop = null;
 
@@ -31,10 +37,24 @@ public class WindowRect : MonoBehaviour
     public DragDrop DragScript { get => OmiyaGames.Utility.GetComponentCached(this, ref dragDrop); }
     public RawImage Display { get => display; }
 
+    private void Start()
+    {
+        if(canMinimize)
+        {
+            minimizeButton.isOn = false;
+        }
+        else
+        {
+            minimizeButton.isOn = true;
+            minimizeButton.interactable = false;
+        }
+    }
+
     public void OnExpandToggleChanged(bool isExpanded)
     {
         // FIXME: expand the dialog soon!
         minimizeIcons.SetActive(isExpanded);
         expandIcons.SetActive(!isExpanded);
+        displayBox.SetActive(isExpanded);
     }
 }

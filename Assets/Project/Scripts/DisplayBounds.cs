@@ -23,7 +23,6 @@ public class DisplayBounds : MonoBehaviour
         IToggleActivator toggle = collision.GetComponent<IToggleActivator>();
         if(toggle != null)
         {
-            gameObject.layer = 1;
             toggle.EnterBound(this);
         }
     }

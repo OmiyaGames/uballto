@@ -387,8 +387,11 @@ MonoBehaviour:
   bottomLeftRange: {fileID: 1427560877920742565}
   topRightRange: {fileID: 6422941439345479792}
   display: {fileID: 6558850293574659882}
+  canMinimize: 1
+  minimizeButton: {fileID: 8468423793638362301}
   minimizeIcons: {fileID: 7758119685332784649}
   expandIcons: {fileID: 7706014570541631596}
+  displayBox: {fileID: 4912162100702752896}
 --- !u!1 &2488231970354194699
 GameObject:
   m_ObjectHideFlags: 0

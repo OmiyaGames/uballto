@@ -7,8 +7,8 @@ using OmiyaGames;
 [RequireComponent(typeof(Rigidbody2D))]
 public class DragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler
 {
-    public delegate void OnDragDetected(DragDrop source, PointerEventData input, Vector2 movedTo);
-    public event OnDragDetected OnAfterDrag;
+    public delegate void OnDragDetected(DragDrop source, Vector2 oldPosition, Vector2 newPosition);
+    public event OnDragDetected OnBeforeDrag;
 
     [SerializeField]
     Canvas uiCanvas = null;
@@ -63,6 +63,7 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler
     {
         if(isDragged)
         {
+            OnBeforeDrag?.Invoke(this, Body.position, moveTo);
             Body.MovePosition(moveTo);
             isDragged = false;
         }
@@ -71,8 +72,8 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler
     public void OnBeginDrag(PointerEventData eventData)
     {
         // get diff
-        bool isDetected;
-        offsetFromMousePosition = Body.transform.position - GetMouseWorldPosition(eventData.position, out isDetected);
+        TryGetMouseWorldPosition(eventData.position, ref lastMouseWorldPosition);
+        offsetFromMousePosition = Body.transform.position - lastMouseWorldPosition;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -81,27 +82,25 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler
         if (eventData.dragging == true)
         {
             // Check if mouse position is detected
-            bool isDetected;
-            moveTo = offsetFromMousePosition + GetMouseWorldPosition(eventData.position, out isDetected);
-            if(isDetected)
+            if(TryGetMouseWorldPosition(eventData.position, ref lastMouseWorldPosition))
             {
                 // Indicate to the next FixedUpdate to move the Rigidbody.
+                moveTo = offsetFromMousePosition + lastMouseWorldPosition;
                 isDragged = true;
-                OnAfterDrag?.Invoke(this, eventData, moveTo);
             }
         }
     }
 
-    private Vector3 GetMouseWorldPosition(Vector3 pixelPosition, out bool isMouseDetected)
+    private bool TryGetMouseWorldPosition(Vector3 pixelPosition, ref Vector3 newWorldPosition)
     {
         fromCamera = RayCastCamera.ScreenPointToRay(pixelPosition);
 
         float distance;
-        isMouseDetected = playField.Raycast(fromCamera, out distance);
+        bool isMouseDetected = playField.Raycast(fromCamera, out distance);
         if (isMouseDetected)
         {
-            lastMouseWorldPosition = fromCamera.GetPoint(distance);
+            newWorldPosition = fromCamera.GetPoint(distance);
         }
-        return lastMouseWorldPosition;
+        return isMouseDetected;
     }
 }

@@ -603,6 +603,11 @@ PrefabInstance:
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 2297969470193597048, guid: ba3c4287fbd0a854aba6290ea5519e35,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 311
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba3c4287fbd0a854aba6290ea5519e35, type: 3}
 --- !u!224 &171817413092890549 stripped
@@ -768,6 +773,16 @@ PrefabInstance:
         type: 3}
       propertyPath: scaleDragToWorldCoord
       value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1515200774970590653, guid: 12651541515121b419a543a5fe2651ef,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2488231970354194699, guid: 12651541515121b419a543a5fe2651ef,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12651541515121b419a543a5fe2651ef, type: 3}

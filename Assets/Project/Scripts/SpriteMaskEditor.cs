@@ -66,16 +66,15 @@ public class SpriteMaskEditor : MonoBehaviour
             {
                 WindowInfo newInfo = new WindowInfo(script);
                 AllWindows.Add(newInfo);
-                //DragToWindowMap.Add(script.DragScript, newInfo);
-                //script.DragScript.OnAfterDrag += MarkDirty;
+                DragToWindowMap.Add(script.DragScript, newInfo);
+                script.DragScript.OnBeforeDrag += MarkDirty;
             }
         }
     }
 
-    private void MarkDirty(DragDrop source, UnityEngine.EventSystems.PointerEventData input, Vector2 movedTo)
+    private void MarkDirty(DragDrop source, Vector2 from, Vector2 to)
     {
-        WindowInfo info;
-        if (DragToWindowMap.TryGetValue(source, out info) == true)
+        if (DragToWindowMap.TryGetValue(source, out WindowInfo info) == true)
         {
             // Mark the corresponding window dirty
             info.IsDirty = true;

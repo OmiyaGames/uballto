@@ -886,7 +886,7 @@ GameObject:
   - component: {fileID: 7126786786798938066}
   - component: {fileID: 6544796500213651849}
   - component: {fileID: 236606654410390442}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Display Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -929,13 +929,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8253992152372970247}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.17243624, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

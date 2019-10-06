@@ -19,16 +19,22 @@ public class ProceduralSpriteGenerator : MonoBehaviour
     public struct SetSprite
     {
         [SerializeField]
+        WindowLayer layer;
+        [SerializeField]
+        Camera camera;
+        [SerializeField]
         SpriteMask mask;
         [SerializeField]
         SpriteRenderer testRenderer;
-        [SerializeField]
-        WindowLayer layer;
 
         public WindowLayer Layer { get => layer; }
 
         public void Setup()
         {
+            if(camera != null)
+            {
+                camera.targetTexture = GetSprite(Layer).CameraTexture;
+            }
             if(mask != null)
             {
                 mask.sprite = GetSprite(Layer).Sprite;
@@ -43,10 +49,11 @@ public class ProceduralSpriteGenerator : MonoBehaviour
     public class SpriteData
     {
         readonly byte[] data;
-        public SpriteData(Sprite sprite, float pixelsPerUnit)
+        public SpriteData(Sprite sprite, RenderTexture renderTexture, float pixelsPerUnit)
         {
             Sprite = sprite;
             PixelsPerUnit = pixelsPerUnit;
+            CameraTexture = renderTexture;
             data = new byte[sprite.texture.width * sprite.texture.height];
         }
 
@@ -62,10 +69,12 @@ public class ProceduralSpriteGenerator : MonoBehaviour
         public Texture2D Texture => Sprite.texture;
         public float Width => Texture.width;
         public float Height => Texture.height;
+        public RenderTexture CameraTexture { get; }
 
         public void Apply()
         {
-            Texture.LoadRawTextureData(data);
+            RenderTexture.active = CameraTexture;
+            Texture.ReadPixels(Sprite.rect, 0, 0, false);
             Texture.Apply();
         }
     }
@@ -113,6 +122,7 @@ public class ProceduralSpriteGenerator : MonoBehaviour
         {
             layer = (WindowLayer)index;
             Texture2D newTexture = new Texture2D(TextureWidthPixel, TextureHeightPixel, TextureFormat.Alpha8, false);
+            RenderTexture newRenderTexture = new RenderTexture(TextureWidthPixel, TextureHeightPixel, 16, RenderTextureFormat.R8, 0);
             newTexture.name = layer.ToString();
 
             // Create the sprite
@@ -123,7 +133,7 @@ public class ProceduralSpriteGenerator : MonoBehaviour
             newSprite.name = newTexture.name;
 
             // Add the sprite into the dictionary
-            allSprites.Add(layer, new SpriteData(newSprite, pixelsPerUnit));
+            allSprites.Add(layer, new SpriteData(newSprite, newRenderTexture, pixelsPerUnit));
         }
     }
 

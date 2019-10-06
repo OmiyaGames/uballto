@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class ProceduralSpriteGenerator : MonoBehaviour
 {
+    public const int NumberOfLayers = 3;
+
+    [System.Flags]
     public enum WindowLayer
     {
-        Default,
-        //Water,
-        NumberOfLayers
+        None = 0,
+        WaterOnly = 1 << 1,
+        WindOnly = 1 << 2,
+        WaterAndWind = WaterOnly & WindOnly
     }
 
     [System.Serializable]
@@ -38,28 +42,35 @@ public class ProceduralSpriteGenerator : MonoBehaviour
 
     public class SpriteData
     {
+        readonly byte[] data;
         public SpriteData(Sprite sprite, float pixelsPerUnit)
         {
             Sprite = sprite;
             PixelsPerUnit = pixelsPerUnit;
-            Data = new byte[sprite.texture.width * sprite.texture.height];
+            data = new byte[sprite.texture.width * sprite.texture.height];
         }
 
+        public byte this[long index]
+        {
+            get => data[index];
+            set => data[index] = value;
+        }
         public float PixelsPerUnit { get; }
         public Sprite Sprite { get; }
-        public byte[] Data { get; }
         public Texture2D Texture => Sprite.texture;
         public float Width => Texture.width;
         public float Height => Texture.height;
 
         public void Apply()
         {
-            Texture.LoadRawTextureData(Data);
+            Texture.LoadRawTextureData(data);
             Texture.Apply();
         }
     }
 
-    private static readonly Dictionary<WindowLayer, SpriteData> allSprites = new Dictionary<WindowLayer, SpriteData>((int)WindowLayer.NumberOfLayers);
+    private static readonly Dictionary<WindowLayer, SpriteData> allSprites = new Dictionary<WindowLayer, SpriteData>(NumberOfLayers);
+    public static int TextureHeightPixel { get; private set; }
+    public static int TextureWidthPixel { get; private set; }
 
     [SerializeField]
     Camera orthogonalCamera;
@@ -68,10 +79,12 @@ public class ProceduralSpriteGenerator : MonoBehaviour
     [SerializeField]
     SetSprite[] spritesToSet;
 
-    public static SpriteData GetSprite(WindowLayer layer = WindowLayer.Default)
+    public static SpriteData GetSprite(WindowLayer layer = WindowLayer.None)
     {
         return allSprites[layer];
     }
+
+    //public static Vector2 ConvertWorldPositionToScreenViewport
 
     // Start is called before the first frame update
     void Awake()
@@ -82,25 +95,28 @@ public class ProceduralSpriteGenerator : MonoBehaviour
             return;
         }
 
-        // FIXME: figure out the height and width of the texture
+        // Figure out the world top and right position
+        double screenRatio = Screen.width;
+        screenRatio /= Screen.height;
+
+        // Figure out the height and width of the texture
         double textureHeightDecimal = orthogonalCamera.orthographicSize * 2 * pixelsPerUnit;
-        double textureWidthDecimal = (textureHeightDecimal / Screen.height) * Screen.width;
-        int textureHeightPixel = (int)textureHeightDecimal;
-        int textureWidthPixel = (int)textureWidthDecimal;
+        double textureWidthDecimal = textureHeightDecimal * screenRatio;
+        TextureHeightPixel = (int)textureHeightDecimal;
+        TextureWidthPixel = (int)textureWidthDecimal;
         WindowLayer layer;
 
         // Go through all the sprites
-        const int numLayers = (int)WindowLayer.NumberOfLayers;
-        for (int index = 0; index < numLayers; ++index)
+        for (int index = 0; index < NumberOfLayers; ++index)
         {
             layer = (WindowLayer)index;
-            Texture2D newTexture = new Texture2D(textureWidthPixel, textureHeightPixel, TextureFormat.Alpha8, false);
+            Texture2D newTexture = new Texture2D(TextureWidthPixel, TextureHeightPixel, TextureFormat.Alpha8, false);
             newTexture.name = layer.ToString();
 
             // Create the sprite
             Sprite newSprite = Sprite.Create(newTexture,
                 // Get the full rect of the texture
-                new Rect(0, 0, textureWidthPixel, textureHeightPixel),
+                new Rect(0, 0, TextureWidthPixel, TextureHeightPixel),
                 new Vector2(0.5f, 0.5f), pixelsPerUnit);
             newSprite.name = newTexture.name;
 
@@ -115,19 +131,19 @@ public class ProceduralSpriteGenerator : MonoBehaviour
         {
             set.Setup();
 
-            // FIXME: Test code
             SpriteData data = GetSprite(set.Layer);
-            for (int y = 0; y < data.Height; ++y)
-            {
-                for (int x = 0; x < data.Width; ++x)
-                {
-                    int i = Mathf.FloorToInt((y * data.Width) + x);
-                    if ((x < (data.Width * 0.25f)) && (y < (data.Height * 0.75f)))
-                    {
-                        data.Data[i] = 128;
-                    }
-                }
-            }
+            // Test Code
+            //for (int y = 0; y < data.Height; ++y)
+            //{
+            //    for (int x = 0; x < data.Width; ++x)
+            //    {
+            //        int i = Mathf.FloorToInt((y * data.Width) + x);
+            //        if ((x < (data.Width * 0.25f)) && (y < (data.Height * 0.75f)))
+            //        {
+            //            data.Data[i] = 128;
+            //        }
+            //    }
+            //}
             data.Apply();
         }
     }

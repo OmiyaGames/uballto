@@ -271,7 +271,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1427560877920742565}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Bottom-Left Empty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -398,7 +398,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6422941439345479792}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Top-Right Empty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1066,7 +1066,8 @@ GameObject:
   - component: {fileID: 6558850293574659882}
   - component: {fileID: 6544796500213651849}
   - component: {fileID: 236606654410390442}
-  m_Layer: 9
+  - component: {fileID: 6175145169426720961}
+  m_Layer: 11
   m_Name: Display Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1174,3 +1175,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6175145169426720961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8253992152372970247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ea8a478a82d0a84c8acbe3888b82c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

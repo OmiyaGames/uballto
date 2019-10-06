@@ -122,7 +122,7 @@ public class ProceduralSpriteGenerator : MonoBehaviour
         {
             layer = (WindowLayer)index;
             Texture2D newTexture = new Texture2D(TextureWidthPixel, TextureHeightPixel, TextureFormat.Alpha8, false);
-            RenderTexture newRenderTexture = new RenderTexture(TextureWidthPixel, TextureHeightPixel, 16, RenderTextureFormat.R8, 0);
+            RenderTexture newRenderTexture = new RenderTexture(TextureWidthPixel, TextureHeightPixel, 16, RenderTextureFormat.Default, 0);
             newTexture.name = layer.ToString();
 
             // Create the sprite

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(DragDrop))]
 public class WindowRect : MonoBehaviour
@@ -11,6 +12,8 @@ public class WindowRect : MonoBehaviour
     RectTransform bottomLeftRange;
     [SerializeField]
     RectTransform topRightRange;
+    [SerializeField]
+    RawImage display;
 
     DragDrop dragDrop = null;
 
@@ -20,4 +23,5 @@ public class WindowRect : MonoBehaviour
     public Vector3 BottomLeftPosition { get => BottomLeftRange.position; }
     public Vector3 TopRightPosition { get => TopRightRange.position; }
     public DragDrop DragScript { get => OmiyaGames.Utility.GetComponentCached(this, ref dragDrop); }
+    public RawImage Display { get => display; }
 }

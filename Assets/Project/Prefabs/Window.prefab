@@ -424,6 +424,7 @@ MonoBehaviour:
   displayLayer: 0
   bottomLeftRange: {fileID: 1427560877920742565}
   topRightRange: {fileID: 6422941439345479792}
+  display: {fileID: 6558850293574659882}
 --- !u!1 &2488231970354194699
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,7 +884,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4129309223502690372}
   - component: {fileID: 5192707734644229010}
-  - component: {fileID: 7126786786798938066}
+  - component: {fileID: 6558850293574659882}
   - component: {fileID: 6544796500213651849}
   - component: {fileID: 236606654410390442}
   m_Layer: 9
@@ -922,7 +923,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8253992152372970247}
   m_CullTransparentMesh: 0
---- !u!114 &7126786786798938066
+--- !u!114 &6558850293574659882
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -931,25 +932,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 8253992152372970247}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_Texture: {fileID: 0}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
 --- !u!61 &6544796500213651849
 BoxCollider2D:
   m_ObjectHideFlags: 0

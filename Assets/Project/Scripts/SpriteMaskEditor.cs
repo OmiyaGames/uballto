@@ -15,7 +15,8 @@ public class SpriteMaskEditor : MonoBehaviour
 
         public bool IsDirty { get; set; } = true;
 
-        public Rect PixelRect { get; set; } = new Rect();
+        // FIXME: get rid of the getter
+        public Rect ViewportRect { get => Window.Display.uvRect;  set => Window.Display.uvRect = value; }
     }
 
     [SerializeField]
@@ -68,6 +69,9 @@ public class SpriteMaskEditor : MonoBehaviour
                 AllWindows.Add(newInfo);
                 DragToWindowMap.Add(script.DragScript, newInfo);
                 script.DragScript.OnBeforeDrag += MarkDirty;
+
+                ProceduralSpriteGenerator.SpriteData data = ProceduralSpriteGenerator.GetSprite(script.DisplayLayer);
+                script.Display.texture = data.CameraTexture;
             }
         }
     }
@@ -91,26 +95,26 @@ public class SpriteMaskEditor : MonoBehaviour
             UpdateAllWindows();
 
             // Draw the sprite
-            foreach (ProceduralSpriteGenerator.WindowLayer layer in dirtyLayers)
-            {
-                ProceduralSpriteGenerator.SpriteData data = ProceduralSpriteGenerator.GetSprite(layer);
+            //foreach (ProceduralSpriteGenerator.WindowLayer layer in dirtyLayers)
+            //{
+            //    ProceduralSpriteGenerator.SpriteData data = ProceduralSpriteGenerator.GetSprite(layer);
 
-                // Go through all coordinates
-                for (int i = 0; i < data.Count; ++i)
-                {
-                    if (IsPixelOpaque(layer, data, i))
-                    {
-                        data[i] = 255;
-                    }
-                    else
-                    {
-                        data[i] = 0;
-                    }
-                }
+            //    // Go through all coordinates
+            //    for (int i = 0; i < data.Count; ++i)
+            //    {
+            //        if (IsPixelOpaque(layer, data, i))
+            //        {
+            //            data[i] = 255;
+            //        }
+            //        else
+            //        {
+            //            data[i] = 0;
+            //        }
+            //    }
 
-                // Apply all the changes
-                data.Apply();
-            }
+            //    // Apply all the changes
+            //    data.Apply();
+            //}
 
             // Re-calculate each window's rect
             isDirty = false;
@@ -127,7 +131,7 @@ public class SpriteMaskEditor : MonoBehaviour
         for (int index = (AllWindows.Count - 1); index >= 0; --index)
         {
             // Check if this window contains this pixel
-            if (AllWindows[index].PixelRect.Contains(pixelPosition))
+            if (AllWindows[index].ViewportRect.Contains(pixelPosition))
             {
                 // If so, check the window's layer
                 if (layer == ProceduralSpriteGenerator.WindowLayer.None)
@@ -169,11 +173,11 @@ public class SpriteMaskEditor : MonoBehaviour
                 topRightViewportPosition = orthogonalCamera.WorldToViewportPoint(info.Window.TopRightPosition);
 
                 // Convert these viewport positions to pixel positions
-                updateRect.xMin = bottomLeftViewportPosition.x * ProceduralSpriteGenerator.TextureWidthPixel;
-                updateRect.yMin = bottomLeftViewportPosition.y * ProceduralSpriteGenerator.TextureHeightPixel;
-                updateRect.xMax = topRightViewportPosition.x * ProceduralSpriteGenerator.TextureWidthPixel;
-                updateRect.yMax = topRightViewportPosition.y * ProceduralSpriteGenerator.TextureHeightPixel;
-                info.PixelRect = updateRect;
+                updateRect.xMin = bottomLeftViewportPosition.x;
+                updateRect.yMin = bottomLeftViewportPosition.y;
+                updateRect.xMax = topRightViewportPosition.x;
+                updateRect.yMax = topRightViewportPosition.y;
+                info.ViewportRect = updateRect;
 
                 // Check which layer needs to be added
                 AddLayer(info, ProceduralSpriteGenerator.WindowLayer.WaterOnly, dirtyLayers);

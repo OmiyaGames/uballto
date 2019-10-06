@@ -43,13 +43,10 @@ namespace OmiyaGames
         // Use this for initialization
         void Start()
         {
-            if (backgroundMusic != null)
+            Singleton.Get<BackgroundMusic>().CurrentMusic = backgroundMusic;
+            if((backgroundMusic != null) && (randomizeStartPoint))
             {
-                Singleton.Get<BackgroundMusic>().CurrentMusic = backgroundMusic;
-                if(randomizeStartPoint)
-                {
-                    Singleton.Get<BackgroundMusic>().Audio.time = Random.Range(0f, backgroundMusic.length);
-                }
+                Singleton.Get<BackgroundMusic>().Audio.time = Random.Range(0f, backgroundMusic.length);
             }
         }
     }

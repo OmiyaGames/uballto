@@ -154,10 +154,18 @@ MonoBehaviour:
       text: 
     - languageIndex: 2
       text: 
+  - key: Menu
+    allTranslations:
+    - languageIndex: 0
+      text: Menu
   - key: New High Score Format
     allTranslations:
     - languageIndex: 0
       text: 'Score: {0}'
+  - key: Restart
+    allTranslations:
+    - languageIndex: 0
+      text: Restart
   - key: Shader Camera Distance
     allTranslations:
     - languageIndex: 0

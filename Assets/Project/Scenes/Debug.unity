@@ -621,6 +621,11 @@ PrefabInstance:
       propertyPath: m_BackGroundColor.b
       value: 0.7924528
       objectReference: {fileID: 0}
+    - target: {fileID: 380219808900515613, guid: ba3c4287fbd0a854aba6290ea5519e35,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba3c4287fbd0a854aba6290ea5519e35, type: 3}
 --- !u!224 &171817413092890549 stripped

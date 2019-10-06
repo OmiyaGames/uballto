@@ -21,10 +21,10 @@ public class SpriteMaskEditor : MonoBehaviour
     [SerializeField]
     Camera orthogonalCamera;
 
-    List<WindowInfo> allWindows = null;
-    readonly HashSet<ProceduralSpriteGenerator.WindowLayer> dirtyLayers = new HashSet<ProceduralSpriteGenerator.WindowLayer>();
-    Dictionary<DragDrop, WindowInfo> dragToWindowMap = null;
     bool isDirty = true;
+    List<WindowInfo> allWindows = null;
+    Dictionary<DragDrop, WindowInfo> dragToWindowMap = null;
+    readonly HashSet<ProceduralSpriteGenerator.WindowLayer> dirtyLayers = new HashSet<ProceduralSpriteGenerator.WindowLayer>();
 
     #region Properties
     /// <summary>
@@ -34,7 +34,10 @@ public class SpriteMaskEditor : MonoBehaviour
     {
         get
         {
-            allWindows = new List<WindowInfo>(transform.childCount);
+            if (allWindows == null)
+            {
+                allWindows = new List<WindowInfo>(transform.childCount);
+            }
             return allWindows;
         }
     }
@@ -43,7 +46,10 @@ public class SpriteMaskEditor : MonoBehaviour
     {
         get
         {
-            dragToWindowMap = new Dictionary<DragDrop, WindowInfo>(transform.childCount);
+            if (dragToWindowMap == null)
+            {
+                dragToWindowMap = new Dictionary<DragDrop, WindowInfo>(transform.childCount);
+            }
             return dragToWindowMap;
         }
     }
@@ -58,9 +64,11 @@ public class SpriteMaskEditor : MonoBehaviour
             WindowRect script = child.GetComponent<WindowRect>();
             if (script != null)
             {
-                AllWindows.Add(new WindowInfo(script));
+                WindowInfo newInfo = new WindowInfo(script);
+                AllWindows.Add(newInfo);
+                //DragToWindowMap.Add(script.DragScript, newInfo);
+                //script.DragScript.OnAfterDrag += MarkDirty;
             }
-            script.DragScript.OnAfterDrag += MarkDirty;
         }
     }
 
@@ -117,7 +125,7 @@ public class SpriteMaskEditor : MonoBehaviour
 
         // Go through all the windows in reverse order
         bool isPixelOpaque = false;
-        for(int index = (AllWindows.Count - 1); index >= 0; --index)
+        for (int index = (AllWindows.Count - 1); index >= 0; --index)
         {
             // Check if this window contains this pixel
             if (AllWindows[index].PixelRect.Contains(pixelPosition))
@@ -152,7 +160,7 @@ public class SpriteMaskEditor : MonoBehaviour
         dirtyLayers.Add(ProceduralSpriteGenerator.WindowLayer.None);
 
         // Go through all windows
-        foreach (WindowInfo info in allWindows)
+        foreach (WindowInfo info in AllWindows)
         {
             // Check if the window is dirty
             if (info.IsDirty)

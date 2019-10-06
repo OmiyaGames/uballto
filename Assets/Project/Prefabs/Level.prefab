@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 718656374885024144}
   - component: {fileID: 718656374884950072}
   - component: {fileID: 4037521591142485734}
+  - component: {fileID: 8719581478306945904}
   m_Layer: 5
   m_Name: All Windows
   m_TagString: Untagged
@@ -117,6 +118,19 @@ MonoBehaviour:
   - mask: {fileID: 8602403574964265362}
     testRenderer: {fileID: 1416769106513786078}
     layer: 0
+--- !u!114 &8719581478306945904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718656374878997438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4c4188dc2d135f408f079f3c2724921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orthogonalCamera: {fileID: 2297969470193597048}
 --- !u!1 &2983288513518605486
 GameObject:
   m_ObjectHideFlags: 0

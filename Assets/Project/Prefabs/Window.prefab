@@ -253,7 +253,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 012d630780fc71545900bc3c762c181e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7569afe71116e2f4bb55a403fc61bb37, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -409,6 +409,9 @@ MonoBehaviour:
   expandIcons: {fileID: 7706014570541631596}
   displayBox: {fileID: 4912162100702752896}
   titleBarEffect: {fileID: 3912671701480504779}
+  titleBarBackground: {fileID: 8059412484175681111}
+  minimizeSprite: {fileID: 21300000, guid: 7569afe71116e2f4bb55a403fc61bb37, type: 3}
+  expandSprite: {fileID: 21300000, guid: 7cbd85cecdeaaa44bb97703a9950534c, type: 3}
 --- !u!1 &2488231970354194699
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,7 +1106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
+  m_Color: {r: 0.8313726, g: 0.82745105, b: 0.8313726, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

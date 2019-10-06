@@ -29,8 +29,16 @@ public class WindowRect : MonoBehaviour, IPointerDownHandler
     GameObject expandIcons;
     [SerializeField]
     GameObject displayBox;
+
+    [Header("Title Bar")]
     [SerializeField]
     BaseMeshEffect titleBarEffect;
+    [SerializeField]
+    Image titleBarBackground;
+    [SerializeField]
+    Sprite minimizeSprite;
+    [SerializeField]
+    Sprite expandSprite;
 
     DragDrop dragDrop = null;
 
@@ -64,7 +72,8 @@ public class WindowRect : MonoBehaviour, IPointerDownHandler
         minimizeIcons.SetActive(isExpanded);
         expandIcons.SetActive(!isExpanded);
 
-        // Update drop shador
+        // Update title bar
+        titleBarBackground.sprite = (isExpanded ? expandSprite : minimizeSprite);
         titleBarEffect.enabled = !isExpanded;
 
         // Run pointer down event

@@ -22,19 +22,11 @@ public class ToggleRigidbody : IToggleActivator
             body.velocity = lastActiveVelocity;
             body.angularVelocity = lastAngularVelocity;
         }
-
-        // Change the layer of the rigidbody
-        body.gameObject.layer = GetLayer(HighestPriorityBound.Layer).LayerIndex;
     }
 
     protected override void AfterExitExistingBound(DisplayBounds bounds)
     {
-        if (NumberOfBounds > 0)
-        {
-            // Change the layer of the rigidbody
-            body.gameObject.layer = GetLayer(HighestPriorityBound.Layer).LayerIndex;
-        }
-        else
+        if (NumberOfBounds == 0)
         {
             // Store velocity
             lastActiveVelocity = body.velocity;
@@ -46,6 +38,15 @@ public class ToggleRigidbody : IToggleActivator
             // Force the object to stop
             body.velocity = Vector2.zero;
             body.angularVelocity = 0;
+        }
+    }
+
+    protected override void AfterWindowOrderChanged()
+    {
+        if(HighestPriorityBound != null)
+        {
+            // Change the layer of the rigidbody
+            body.gameObject.layer = GetLayer(HighestPriorityBound.Layer).LayerIndex;
         }
     }
 }

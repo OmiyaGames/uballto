@@ -18,6 +18,12 @@ public class DisplayBounds : MonoBehaviour
         get => rect.DisplayLayer;
     }
 
+    public System.Action<WindowRect> OnFloatedToTop
+    {
+        get => rect.OnFloatedToTop;
+        set => rect.OnFloatedToTop = value;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         IToggleActivator toggle = collision.GetComponent<IToggleActivator>();

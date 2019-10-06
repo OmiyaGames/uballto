@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -34,6 +35,7 @@ public abstract class IToggleActivator : MonoBehaviour
         , { ProceduralSpriteGenerator.WindowLayer.BaseAndWater, new LayerInfo(ProceduralSpriteGenerator.WindowLayer.BaseAndWater, "Water Dimension") }
     };
     readonly HashSet<DisplayBounds> inBounds = new HashSet<DisplayBounds>();
+    System.Action<WindowRect> cacheOnWindowChange = null;
 
     public DisplayBounds HighestPriorityBound { get; private set; } = null;
 
@@ -44,6 +46,18 @@ public abstract class IToggleActivator : MonoBehaviour
 
     public int NumberOfBounds => inBounds.Count;
 
+    protected Action<WindowRect> OnWindowChange
+    {
+        get
+        {
+            if(cacheOnWindowChange == null)
+            {
+                cacheOnWindowChange = new Action<WindowRect>(OnWindowOrderChanged);
+            }
+            return cacheOnWindowChange;
+        }
+    }
+
     public bool ContainsBounds(DisplayBounds bounds)
     {
         return inBounds.Contains(bounds);
@@ -51,6 +65,7 @@ public abstract class IToggleActivator : MonoBehaviour
 
     protected abstract void AfterEnterNewBound(DisplayBounds newBounds);
     protected abstract void AfterExitExistingBound(DisplayBounds removedBounds);
+    protected abstract void AfterWindowOrderChanged();
 
     public void EnterBound(DisplayBounds bounds)
     {
@@ -59,6 +74,10 @@ public abstract class IToggleActivator : MonoBehaviour
             // Find the highest priority bound
             UpdateHighestPriorityBound();
             AfterEnterNewBound(bounds);
+
+            // Unbind to their event
+            bounds.OnFloatedToTop += OnWindowChange;
+            AfterWindowOrderChanged();
         }
     }
 
@@ -69,6 +88,10 @@ public abstract class IToggleActivator : MonoBehaviour
             // Find the highest priority bound
             UpdateHighestPriorityBound();
             AfterExitExistingBound(bounds);
+
+            // Unbind to their event
+            AfterWindowOrderChanged();
+            bounds.OnFloatedToTop -= OnWindowChange;
         }
     }
 
@@ -89,5 +112,11 @@ public abstract class IToggleActivator : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void OnWindowOrderChanged(WindowRect topWindow)
+    {
+        UpdateHighestPriorityBound();
+        AfterWindowOrderChanged();
     }
 }

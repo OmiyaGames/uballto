@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(DragDrop))]
-public class WindowRect : MonoBehaviour
+public class WindowRect : MonoBehaviour, IPointerDownHandler
 {
+    public System.Action<WindowRect> OnFloatedToTop;
+
     [SerializeField]
     ProceduralSpriteGenerator.WindowLayer displayLayer;
     [SerializeField]
@@ -56,5 +59,13 @@ public class WindowRect : MonoBehaviour
         minimizeIcons.SetActive(isExpanded);
         expandIcons.SetActive(!isExpanded);
         displayBox.SetActive(isExpanded);
+
+        OnPointerDown(null);
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        transform.SetAsLastSibling();
+        OnFloatedToTop?.Invoke(this);
     }
 }

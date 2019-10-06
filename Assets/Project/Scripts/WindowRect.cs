@@ -29,6 +29,8 @@ public class WindowRect : MonoBehaviour, IPointerDownHandler
     GameObject expandIcons;
     [SerializeField]
     GameObject displayBox;
+    [SerializeField]
+    BaseMeshEffect titleBarEffect;
 
     DragDrop dragDrop = null;
 
@@ -55,11 +57,17 @@ public class WindowRect : MonoBehaviour, IPointerDownHandler
 
     public void OnExpandToggleChanged(bool isExpanded)
     {
-        // FIXME: expand the dialog soon!
-        minimizeIcons.SetActive(isExpanded);
-        expandIcons.SetActive(!isExpanded);
+        // Expand the dialog!
         displayBox.SetActive(isExpanded);
 
+        // Update icons
+        minimizeIcons.SetActive(isExpanded);
+        expandIcons.SetActive(!isExpanded);
+
+        // Update drop shador
+        titleBarEffect.enabled = !isExpanded;
+
+        // Run pointer down event
         OnPointerDown(null);
     }
 
@@ -67,5 +75,15 @@ public class WindowRect : MonoBehaviour, IPointerDownHandler
     {
         transform.SetAsLastSibling();
         OnFloatedToTop?.Invoke(this);
+    }
+
+    public void OnPointerHoverToggle()
+    {
+        CursorManager.SetClickCursor(true);
+    }
+
+    public void OnPointerExitToggle()
+    {
+        CursorManager.SetClickCursor(false);
     }
 }

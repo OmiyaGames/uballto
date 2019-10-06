@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using OmiyaGames;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class DragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler
+public class DragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public delegate void OnDragDetected(DragDrop source, Vector2 oldPosition, Vector2 newPosition);
     public event OnDragDetected OnBeforeDrag;
@@ -102,5 +102,15 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler
             newWorldPosition = fromCamera.GetPoint(distance);
         }
         return isMouseDetected;
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        CursorManager.SetDragCursor(true);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        CursorManager.SetDragCursor(false);
     }
 }

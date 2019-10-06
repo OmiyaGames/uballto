@@ -32,7 +32,7 @@ public abstract class IToggleActivator : MonoBehaviour
     static readonly Dictionary<ProceduralSpriteGenerator.WindowLayer, LayerInfo> layerMap = new Dictionary<ProceduralSpriteGenerator.WindowLayer, LayerInfo>()
     {
         { ProceduralSpriteGenerator.WindowLayer.Base, new LayerInfo(ProceduralSpriteGenerator.WindowLayer.Base, "Default") }
-        , { ProceduralSpriteGenerator.WindowLayer.BaseAndWater, new LayerInfo(ProceduralSpriteGenerator.WindowLayer.BaseAndWater, "Water Dimension") }
+        , { ProceduralSpriteGenerator.WindowLayer.BaseAndWater, new LayerInfo(ProceduralSpriteGenerator.WindowLayer.BaseAndWater, "Animated Water Objects") }
     };
     readonly HashSet<DisplayBounds> inBounds = new HashSet<DisplayBounds>();
     System.Action<WindowRect> cacheOnWindowChange = null;

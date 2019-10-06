@@ -198,6 +198,7 @@ GameObject:
   - component: {fileID: 3918594083044101862}
   - component: {fileID: 3691480233625928506}
   - component: {fileID: 8059412484175681111}
+  - component: {fileID: 3912671701480504779}
   m_Layer: 5
   m_Name: Title Bar
   m_TagString: Untagged
@@ -252,7 +253,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 012d630780fc71545900bc3c762c181e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7569afe71116e2f4bb55a403fc61bb37, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -262,6 +263,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3912671701480504779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996844185626045312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 7.5, y: -7.5}
+  m_UseGraphicAlpha: 0
 --- !u!1 &1515200774970590653
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,6 +408,10 @@ MonoBehaviour:
   minimizeIcons: {fileID: 7758119685332784649}
   expandIcons: {fileID: 7706014570541631596}
   displayBox: {fileID: 4912162100702752896}
+  titleBarEffect: {fileID: 3912671701480504779}
+  titleBarBackground: {fileID: 8059412484175681111}
+  minimizeSprite: {fileID: 21300000, guid: 7569afe71116e2f4bb55a403fc61bb37, type: 3}
+  expandSprite: {fileID: 21300000, guid: 7cbd85cecdeaaa44bb97703a9950534c, type: 3}
 --- !u!1 &2488231970354194699
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,6 +568,7 @@ GameObject:
   - component: {fileID: 233754379790326016}
   - component: {fileID: 8468423793638362301}
   - component: {fileID: 4681945586487252839}
+  - component: {fileID: 8140460088794324507}
   m_Layer: 5
   m_Name: Open Toggle
   m_TagString: Untagged
@@ -652,6 +673,49 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8140460088794324507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5535400720629011603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5585485400647387774}
+          m_MethodName: OnPointerHoverToggle
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5585485400647387774}
+          m_MethodName: OnPointerExitToggle
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &5767066917145658304
 GameObject:
   m_ObjectHideFlags: 0
@@ -994,6 +1058,7 @@ GameObject:
   - component: {fileID: 4177087329926984844}
   - component: {fileID: 7289801364059474402}
   - component: {fileID: 3849444025804462983}
+  - component: {fileID: 1073001598510803608}
   m_Layer: 5
   m_Name: Background Image
   m_TagString: Untagged
@@ -1017,8 +1082,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 25}
-  m_SizeDelta: {x: 0, y: 25}
+  m_AnchoredPosition: {x: 0, y: 50}
+  m_SizeDelta: {x: 0, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &7289801364059474402
 CanvasRenderer:
@@ -1041,7 +1106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
+  m_Color: {r: 0.8313726, g: 0.82745105, b: 0.8313726, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1056,6 +1121,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1073001598510803608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013392409224636070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 7.5, y: -7.5}
+  m_UseGraphicAlpha: 0
 --- !u!1 &8253992152372970247
 GameObject:
   m_ObjectHideFlags: 0

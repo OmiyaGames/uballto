@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 2373304223930308047, guid: 12651541515121b419a543a5fe2651ef,
         type: 3}
       propertyPath: m_Name
-      value: Base Window
+      value: Window - Base
       objectReference: {fileID: 0}
     - target: {fileID: 4282960815402243979, guid: 12651541515121b419a543a5fe2651ef,
         type: 3}

@@ -103,11 +103,11 @@ MonoBehaviour:
   - key: Game Title
     allTranslations:
     - languageIndex: 0
-      text: Template Unity Project
+      text: Uballto
     - languageIndex: 1
-      text: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8\u4E00\u25CF\u30E6\u30CB\u30C6\u30A3\u30FC\u25CF\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8"
+      text: "\u30A6\u30DC\u30FC\u30EB\u30C4\u30FC"
     - languageIndex: 2
-      text: Ethay Ecursiveray Ollhouseday
+      text: Uballtoay
   - key: Instructions
     allTranslations:
     - languageIndex: 0

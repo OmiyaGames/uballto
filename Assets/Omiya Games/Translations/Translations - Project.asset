@@ -111,45 +111,27 @@ MonoBehaviour:
   - key: Instructions
     allTranslations:
     - languageIndex: 0
-      text: 'The game''s objective is to travel as far as possible without falling
-        off of the course. Please note that this game is still in development stages.
+      text: 'Guide the ball to the goal post!
 
 
         <b>Controls:</b>
 
 
-        * Left or right arrow keys to steer.
+        * Click the expand (square) button on the right of the window dialog title
+        bar to expand the window.
 
 
-        * Hold the down arrow key to slow down.
-
-
-        * Hold the up arrow key to use turbo (requires fuel).
-
-
-        * Tap the space bar while on the ground to hop.
-
-
-        * Hold the space bar while in the air to dive.
-
-
-        * While on the ground, hold the space bar, then hold left or right to initiate
-        a drift. When the white curve emit from the corner of the vehicle, you may
-        let go of the arrow key to continue drifting; arrow keys can now be used to
-        adjust the angle of the drift.
+        * Click, hold, and drag anywhere on the window dialog to move it around.
 
 
         <b>Tips:</b>
 
 
-        * If you end up off-track, a timer will appear to indicate how long you have
-        before the game over screen appears.
+        * The ball only "animates" when within the window dialog bounds.
 
 
-        * Drifting and flying in the air charges the turbo fuel.
-
-
-        * When off-track, use the turbo fuel and dive to return back to safety!'
+        * Dialogs with unique titles reveal new worlds! Bounds the ball between these
+        two windows.'
     - languageIndex: 1
       text: 
     - languageIndex: 2

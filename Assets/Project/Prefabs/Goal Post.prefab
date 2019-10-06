@@ -265,4 +265,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectTag: Player
-  delaySwitchSceneSeconds: 0.5
+  delaySwitchSceneSeconds: 0.1

@@ -97,7 +97,6 @@ public class SpriteMaskEditor : MonoBehaviour
                 ProceduralSpriteGenerator.SpriteData data = ProceduralSpriteGenerator.GetSprite(layer);
 
                 // Go through all coordinates
-                Vector2 pixelPosition = Vector2.zero;
                 for (int i = 0; i < data.Count; ++i)
                 {
                     if (IsPixelOpaque(layer, data, i))
@@ -109,6 +108,9 @@ public class SpriteMaskEditor : MonoBehaviour
                         data[i] = 0;
                     }
                 }
+
+                // Apply all the changes
+                data.Apply();
             }
 
             // Re-calculate each window's rect
@@ -118,10 +120,8 @@ public class SpriteMaskEditor : MonoBehaviour
 
     private bool IsPixelOpaque(ProceduralSpriteGenerator.WindowLayer layer, ProceduralSpriteGenerator.SpriteData data, int pixelIndex)
     {
-        Vector2 pixelPosition;
         // Convert the index to coordinates
-        pixelPosition.x = pixelIndex % data.Width;
-        pixelPosition.y = pixelIndex / data.Width;
+        Vector2Int pixelPosition = new Vector2Int(Mathf.FloorToInt(pixelIndex % data.Width), Mathf.FloorToInt(pixelIndex / data.Width));
 
         // Go through all the windows in reverse order
         bool isPixelOpaque = false;

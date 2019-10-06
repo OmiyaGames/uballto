@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Omiya Games
-  productName: Ludum Dare 45
+  productName: Uballto
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 1, g: 1, b: 1, a: 1}
@@ -169,7 +169,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.omiyagames.templateproject
-    Standalone: unity.Omiya Games.Template Project
+    Standalone: unity.OmiyaGames.Uballto
     Tizen: com.omiyagames.templateproject
     iPhone: com.omiyagames.templateproject
     tvOS: com.omiyagames.templateproject
@@ -739,6 +739,6 @@ PlayerSettings:
   projectName: Template Unity Project
   organizationId: omiya-games
   cloudEnabled: 0
-  enableNativePlatformBackendsForNewInputSystem: 1
+  enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
   legacyClampBlendShapeWeights: 1

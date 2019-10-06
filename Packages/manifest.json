@@ -18,6 +18,7 @@
     "com.unity.timeline": "1.1.0",
     "com.unity.ugui": "1.0.0",
     "com.unity.ui.builder": "0.8.2-preview",
+    "com.unity.vectorgraphics": "2.0.0-preview.6",
     "nuget.mono-cecil": "0.1.6-preview",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",

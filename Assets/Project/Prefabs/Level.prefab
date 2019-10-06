@@ -456,6 +456,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8799443644537578329}
+  - component: {fileID: 809772213995246356}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -480,6 +481,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &809772213995246356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5216649586908154457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fdc8bbc062fcf458a9317d21cc1911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultCursor:
+    cursor: {fileID: 2800000, guid: 0d21b8bbd0a178a42ad5d5ba8f73210e, type: 3}
+    centerOfCursor: {x: 0, y: 0}
+  dragCursor:
+    cursor: {fileID: 2800000, guid: df1354db1af226648ad52439b4ca3226, type: 3}
+    centerOfCursor: {x: 256, y: 256}
+  clickCursor:
+    cursor: {fileID: 2800000, guid: a2cc38d8d9f1f054ba2c4e97e0b7d396, type: 3}
+    centerOfCursor: {x: 215, y: 0}
 --- !u!1 &8882768418738317405
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,11 +677,12 @@ PrefabInstance:
       propertyPath: m_CullingMask.m_Bits
       value: 288
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114535535390581886, guid: 0cb066fb0f0cf4a43a8d239b0f1b221e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0cb066fb0f0cf4a43a8d239b0f1b221e, type: 3}
---- !u!4 &2287262757240502600 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4878912538111896, guid: 0cb066fb0f0cf4a43a8d239b0f1b221e,
+--- !u!20 &2297969470193597048 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 20458670678699176, guid: 0cb066fb0f0cf4a43a8d239b0f1b221e,
     type: 3}
   m_PrefabInstance: {fileID: 2282383844725593808}
   m_PrefabAsset: {fileID: 0}
@@ -669,9 +692,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2282383844725593808}
   m_PrefabAsset: {fileID: 0}
---- !u!20 &2297969470193597048 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 20458670678699176, guid: 0cb066fb0f0cf4a43a8d239b0f1b221e,
+--- !u!4 &2287262757240502600 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4878912538111896, guid: 0cb066fb0f0cf4a43a8d239b0f1b221e,
     type: 3}
   m_PrefabInstance: {fileID: 2282383844725593808}
   m_PrefabAsset: {fileID: 0}

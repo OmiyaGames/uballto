@@ -459,10 +459,60 @@ PrefabInstance:
       propertyPath: m_CullingMask.m_Bits
       value: 288
       objectReference: {fileID: 0}
+    - target: {fileID: 2297969470193597048, guid: ba3c4287fbd0a854aba6290ea5519e35,
+        type: 3}
+      propertyPath: m_AllowMSAA
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2297969470193597048, guid: ba3c4287fbd0a854aba6290ea5519e35,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.16073336
+      objectReference: {fileID: 0}
+    - target: {fileID: 2297969470193597048, guid: ba3c4287fbd0a854aba6290ea5519e35,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.2486363
+      objectReference: {fileID: 0}
+    - target: {fileID: 2297969470193597048, guid: ba3c4287fbd0a854aba6290ea5519e35,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.7924528
+      objectReference: {fileID: 0}
     - target: {fileID: 1244311708345613925, guid: ba3c4287fbd0a854aba6290ea5519e35,
         type: 3}
       propertyPath: m_Mass
       value: 7.0685835
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997903214734020811, guid: ba3c4287fbd0a854aba6290ea5519e35,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.16073336
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997903214734020811, guid: ba3c4287fbd0a854aba6290ea5519e35,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.2486363
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997903214734020811, guid: ba3c4287fbd0a854aba6290ea5519e35,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.7924528
+      objectReference: {fileID: 0}
+    - target: {fileID: 3730163058314334242, guid: ba3c4287fbd0a854aba6290ea5519e35,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.16073336
+      objectReference: {fileID: 0}
+    - target: {fileID: 3730163058314334242, guid: ba3c4287fbd0a854aba6290ea5519e35,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.2486363
+      objectReference: {fileID: 0}
+    - target: {fileID: 3730163058314334242, guid: ba3c4287fbd0a854aba6290ea5519e35,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.7924528
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba3c4287fbd0a854aba6290ea5519e35, type: 3}

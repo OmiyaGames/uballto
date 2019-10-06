@@ -216,3 +216,7 @@ MonoBehaviour:
     allTranslations:
     - languageIndex: 0
       text: Preview Shader
+  - key: Water Window
+    allTranslations:
+    - languageIndex: 0
+      text: Water

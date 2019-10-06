@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class ProceduralSpriteGenerator : MonoBehaviour
 {
-    public const int NumberOfLayers = 1 + (int)WindowLayer.AllLayers;
+    public const int NumberOfLayers = 1 + (int)WindowLayer.BaseAndWater;
 
     public enum WindowLayer
     {
         Base,
         BaseAndWater,
-        BaseAndWind,
-        AllLayers
+        //BaseAndWind,
+        //AllLayers
     }
 
     [System.Serializable]

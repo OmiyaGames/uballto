@@ -7,3 +7,8 @@
 
 * "Checkered Flag" made by Clker-Free-Vector-Images
 * https://pixabay.com/vectors/flag-chequered-finishing-race-cars-36198/
+
+# texture5.png, texture26.png, & texture33.png
+
+* "Procedural Textures" made by drummyfish
+* https://opengameart.org/content/40-procedural-textures

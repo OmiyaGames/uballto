@@ -4,13 +4,8 @@ using UnityEngine;
 using OmiyaGames.Audio;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class BallRoller : ISoundMaker
+public class BallRoller : Crate
 {
-    [SerializeField]
-    float stillTorque = 10f;
-    [SerializeField]
-    Vector2 stillForce;
-
     [Header("Music")]
     [SerializeField]
     AmbientMusic music;
@@ -21,18 +16,11 @@ public class BallRoller : ISoundMaker
     [SerializeField]
     float offsetPitch = 0.1f;
 
-    [Header("Sound")]
+    [Header("Movement")]
     [SerializeField]
-    SoundEffect defaultBoundsSound;
+    float stillTorque = 10f;
     [SerializeField]
-    SoundEffect waterSplashSound;
-
-    Rigidbody2D body = null;
-
-    public Rigidbody2D Body
-    {
-        get => OmiyaGames.Utility.GetComponentCached(this, ref body);
-    }
+    Vector2 stillForce;
 
     private void Start()
     {
@@ -59,16 +47,5 @@ public class BallRoller : ISoundMaker
         {
             music.Pause();
         }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        defaultBoundsSound.Play();
-    }
-
-    public override void OnEnterWater(WaterTrigger source)
-    {
-        base.OnEnterWater(source);
-        waterSplashSound.Play();
     }
 }

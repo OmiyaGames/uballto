@@ -1,22 +1,13 @@
-This is a template Unity project Omiya Games uses to start their game project.
-In this Unity project, the following folders has the following roles:
+# About
 
-Assets:
-A folder required by Unity.  Contains assets used for the game.  See the README.txt in the folder for more details.
+[**Uballto**](https://omiyagames.itch.io/uballto) is a phyiscs-based puzzle game created in 72-hours by one individual.  This [Unity](https://unity.com) game was created for the [Ludum Dare 45] challenge, where online attendees were encouraged to make a game based off of the theme, "starting with nothing."
 
-ProjectSettings:
-A folder required by Unity.  Contains settings for Unity.
+The objective of **Uballto** is to guide the soccer ball to a checkered flag.  The challenge, however, is the player cannot directly interact with either the ball or the flag.  Instead, the player can use their mouse to click-and-drag dialog boxes that not only reveals what the level looks like, but also re-animated mission-critical game elements, such as the aforementioned socer ball, crates, and moving platforms.
 
-Builds:
-A folder where its contents are ignored by Mercurial.  Typically where game builds are created in.
+For convenience, the soccer ball will automatically roll towards one direction when left on a flat surface (usually, right).
 
-UnimportedAssets:
-A folder that Mercurial versions, but Unity doesn't detect.  Typically where unfinished art assets are placed in.
+# Other Notes
 
-Library:
-A folder required by Unity.  It's contents are very cryptic and mysterious.  I wouldn't recommend touching it.
-Ignored by Mercurial.
+Created using largely public domain and [Creative Commons](http://creativecommons.org) assets.  Their licenses are available in the various folders they're extracted from.  Some edits to images were made in Photoshop.  A sound effect was cut shorter using Audacity.  Obviously, the majority of the game is made in Unity.
 
-Temp:
-A folder used by Unity.  Unity creates it when an editor opens.  I wouldn't recommend touching it.
-Ignored by Mercurial.
+# Where to Play

@@ -132,7 +132,7 @@ MonoBehaviour:
   customScriptDefineSymbols:
     enable: 0
     customValue: 
-  architecture: 0
+  architecture: 1
   compression: 2
   scriptingBackend: 0
   enableHeadlessMode: 0

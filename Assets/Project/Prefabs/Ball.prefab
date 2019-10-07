@@ -333,8 +333,8 @@ MonoBehaviour:
   stillForce: {x: 120, y: 0}
   music: {fileID: 4230948324784723761}
   pitchRange: {x: 0.6, y: 2}
-  velocityToPitchMultiplier: 0.25
-  offsetPitch: 0.05
+  velocityToPitchMultiplier: 0.3
+  offsetPitch: 0.1
   defaultBoundsSound: {fileID: 5082767300476403369}
   waterSplashSound: {fileID: 869655973485918173}
 --- !u!1 &3607707331239460240

@@ -20,70 +20,34 @@ MonoBehaviour:
   presetMessageWhenTranslationNotFound: <Translation Not Found>
   replaceEmptyStringWithDefaultText: 1
   translations:
+  - key: Base Window
+    allTranslations:
+    - languageIndex: 0
+      text: Base
+  - key: Controls
+    allTranslations:
+    - languageIndex: 0
+      text: Drag this dialog window to move it!
   - key: Credits Full
     allTranslations:
     - languageIndex: 0
-      text: 'Created by Omiya Games
-
-
-        <b>Programming</b>
-
-        Taro Omiya
-
-
-        <b>3D Models</b>
-
-        Taro Omiya
-
-
-        <b>2D Textures</b>
-
-        Taro Omiya
-
-
-        <b>Music</b>
-
-        Taro Omiya
-
-
-        <b>Fonts</b>
-
-        "Noto-Sans"
-
-        by Google
-
-        <size=38>Licensed under SIL Open Font License v1.1
-
-        <link="license-font"><u>scripts.sil.org/OFL</u></link></size>
-
-
-        <b>Special Effects</b>
-
-        All particles effects
-
-        by Taro Omiya
-
-
-        <b>Special Thanks</b>
-
-        Tech Valley Game Space
-
-        Tech Valley Center of Gravity
-
-
-        <b>Funded by Patreon</b>
-
-        For more info, see:
-
-        <link="patreon"><u>patreon.com/OmiyaGames
-
-        </u></link>
-
-
-        This project is still under heavy development. Game is subject to change.
-
-
-        Thanks for playing!'
+      text: "Created by Omiya Games\r\n\r\n<b>Programming</b>\r\nTaro Omiya\r\n\r\n<b>Images</b>\r\n\"Silhouette
+        Photo of a Mountain during Sunset\"\r\nby veeterzy\r\n<size=38>Licensed under
+        Pexels</size>\r\n<size=38><u>pexels.com/photo/silhouette-photo-of-a-mountain-during-sunset-114979</u></size>\r\n\r\n\"Football\"\r\nby
+        OpenClipart-Vectors\r\n<size=38>Licensed under Pixabay</size>\r\n<size=38><u>pixabay.com/vectors/football-ball-sport-soccer-round-157930</u></size>\r\n\r\n\"Checkered
+        Flag\"\r\nby Clker-Free-Vector-Images\r\n<size=38>Licensed under Pixabay</size>\r\n<size=38><u>pixabay.com/vectors/flag-chequered-finishing-race-cars-36198</u></size>\r\n\r\nGround
+        and Water\r\nby drummyfish\r\n<size=38>Under Public Domain</size>\r\n<size=38><u>opengameart.org/content/40-procedural-textures</u></size>\r\n\r\nAll
+        Mouse Cursors\r\nby Freepik\r\n<size=38>Licensed under Flat Icons</size>\r\n<size=38><u>flaticon.com/authors/freepik</u></size>\r\n\r\nRestart
+        and Menu icons\r\nby Kenney\r\n<size=38>Under Public Domain</size>\r\n<size=38><u>kenney.nl/assets/game-icons</u></size>\r\n\r\nRest
+        by Taro Omiya\r\n\r\n<b>Music</b>\r\n\"Funny Song\"\r\nby Benjamin Tissot
+        (Bensound)\r\n<size=38>Licensed under Creative Commons</size>\r\n<size=38><u>bensound.com/royalty-free-music/track/funny-song</u></size>\r\n\r\n<b>Sound</b>\r\n\"Ball
+        Pass\"\r\nby Stuart Duffield\r\n<size=38>Licensed under Sonniss</size>\r\n<size=38><u>sonniss.com</u></size>\r\n\r\n\"Water
+        splashes in a roomy tub dunking slow and hard, x3\"\r\nby Paul Virostek\r\n<size=38>2013
+        Airborne Sound (Airborne Sound)</size>\r\n<size=38>Licensed under Sonniss</size>\r\n<size=38><u>airbornesound.com/downloads/bathroom-sound-effects</u></size>\r\n\r\n<b>Fonts</b>\r\n\"Ubuntu
+        Font\"\r\nby Canonical\r\n<size=38>Licensed under Ubuntu Font Licence v1.0</size>\r\n<size=38><u>ubuntu.com/legal/font-licence</u></size>\r\n\r\n\"Noto
+        Font\"\r\nby Google\r\n<size=38>Licensed under SIL Open Font License v1.1</size>\r\n<size=38><u>scripts.sil.org/OFL</u></size>\r\n\r\n<b>Special
+        Thanks</b>\r\nTech Valley Game Space\r\nTech Valley Center of Gravity\r\nLudum
+        Dare\r\n\r\nThanks for playing!"
     - languageIndex: 1
       text: 
     - languageIndex: 2
@@ -99,61 +63,57 @@ MonoBehaviour:
   - key: Game Title
     allTranslations:
     - languageIndex: 0
-      text: Template Unity Project
+      text: Uballto
     - languageIndex: 1
-      text: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8\u4E00\u25CF\u30E6\u30CB\u30C6\u30A3\u30FC\u25CF\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8"
+      text: "\u30A6\u30DC\u30FC\u30EB\u30C4\u30FC"
     - languageIndex: 2
-      text: Ethay Ecursiveray Ollhouseday
+      text: Uballtoay
   - key: Instructions
     allTranslations:
     - languageIndex: 0
-      text: 'The game''s objective is to travel as far as possible without falling
-        off of the course. Please note that this game is still in development stages.
+      text: 'Guide the ball to the flag!
 
 
         <b>Controls:</b>
 
 
-        * Left or right arrow keys to steer.
+        * Click the expand (plus) button on the right of the window dialog title bar
+        to expand the window.
 
 
-        * Hold the down arrow key to slow down.
-
-
-        * Hold the up arrow key to use turbo (requires fuel).
-
-
-        * Tap the space bar while on the ground to hop.
-
-
-        * Hold the space bar while in the air to dive.
-
-
-        * While on the ground, hold the space bar, then hold left or right to initiate
-        a drift. When the white curve emit from the corner of the vehicle, you may
-        let go of the arrow key to continue drifting; arrow keys can now be used to
-        adjust the angle of the drift.
+        * Click, hold, and drag anywhere on the window dialog to move it around.
 
 
         <b>Tips:</b>
 
 
-        * If you end up off-track, a timer will appear to indicate how long you have
-        before the game over screen appears.
+        * The ball only "animates" when within the window dialog bounds.
 
 
-        * Drifting and flying in the air charges the turbo fuel.
-
-
-        * When off-track, use the turbo fuel and dive to return back to safety!'
+        * Dialogs with unique titles reveal new worlds! Bounds the ball between these
+        two windows.'
     - languageIndex: 1
       text: 
     - languageIndex: 2
       text: 
+  - key: Menu
+    allTranslations:
+    - languageIndex: 0
+      text: Menu
   - key: New High Score Format
     allTranslations:
     - languageIndex: 0
       text: 'Score: {0}'
+  - key: Objective
+    allTranslations:
+    - languageIndex: 0
+      text: Guide the Ball to the Flag!
+  - key: Objective Label
+    allTranslations: []
+  - key: Restart
+    allTranslations:
+    - languageIndex: 0
+      text: Restart
   - key: Shader Camera Distance
     allTranslations:
     - languageIndex: 0
@@ -212,3 +172,7 @@ MonoBehaviour:
     allTranslations:
     - languageIndex: 0
       text: Preview Shader
+  - key: Water Window
+    allTranslations:
+    - languageIndex: 0
+      text: Water

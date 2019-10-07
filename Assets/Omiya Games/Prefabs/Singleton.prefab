@@ -81,40 +81,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundEffect: {fileID: 11492550}
   mainMenu:
-    scenePath: Assets/Omiya Games/Scenes/Menus/Main Menu.unity
+    scenePath: Assets/Project/Scenes/Menus/Main Menu.unity
     displayName:
       key: Main Menu
       dictionary: {fileID: 11400000, guid: c3ca07e6811f27b4d82bb14629e8450c, type: 2}
     cursorMode: 0
     revertTimeScale: 1
   credits:
-    scenePath: Assets/Omiya Games/Scenes/Menus/Credits.unity
+    scenePath: Assets/Project/Scenes/Menus/Credits.unity
     displayName:
       key: Credits
       dictionary: {fileID: 11400000, guid: c3ca07e6811f27b4d82bb14629e8450c, type: 2}
     cursorMode: 0
     revertTimeScale: 1
   loading:
-    scenePath: Assets/Omiya Games/Scenes/Menus/Loading.unity
+    scenePath: Assets/Project/Scenes/Menus/Loading.unity
     displayName:
       key: Loading
       dictionary: {fileID: 11400000, guid: c3ca07e6811f27b4d82bb14629e8450c, type: 2}
     cursorMode: 0
     revertTimeScale: 1
   levels:
-  - scenePath: Assets/Omiya Games/Scenes/Level 1.unity
+  - scenePath: Assets/Project/Scenes/Level 1.unity
     displayName:
       key: Level Button
       dictionary: {fileID: 11400000, guid: c3ca07e6811f27b4d82bb14629e8450c, type: 2}
     cursorMode: 0
     revertTimeScale: 1
-  - scenePath: Assets/Omiya Games/Scenes/Level 2.unity
+  - scenePath: Assets/Project/Scenes/Level 2.unity
     displayName:
       key: Level Button
       dictionary: {fileID: 11400000, guid: c3ca07e6811f27b4d82bb14629e8450c, type: 2}
     cursorMode: 0
     revertTimeScale: 1
-  - scenePath: Assets/Omiya Games/Scenes/Level 3.unity
+  - scenePath: Assets/Project/Scenes/Level 3.unity
     displayName:
       key: Level Button
       dictionary: {fileID: 11400000, guid: c3ca07e6811f27b4d82bb14629e8450c, type: 2}
@@ -660,7 +660,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 129462}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: -619905303, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
@@ -675,7 +675,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 129462}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1077351063, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_HorizontalAxis: Horizontal

@@ -24,6 +24,10 @@ MonoBehaviour:
     allTranslations:
     - languageIndex: 0
       text: Base
+  - key: Block Window
+    allTranslations:
+    - languageIndex: 0
+      text: Block
   - key: Controls
     allTranslations:
     - languageIndex: 0

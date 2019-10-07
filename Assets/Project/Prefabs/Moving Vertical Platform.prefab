@@ -217,7 +217,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.03, y: 0.46}
+  m_Size: {x: 2.7, y: 0.22}
   m_EdgeRadius: 0
 --- !u!114 &6228434413751694744
 MonoBehaviour:
@@ -341,7 +341,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9075908503741259712}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8032ecbb6776564baaaa30d9cc3a770, type: 3}
   m_Name: 
@@ -349,4 +349,4 @@ MonoBehaviour:
   range: 2
   startAt: 0
   speed: 1
-  box: {fileID: 4178593975186693945}
+  box: {fileID: 6433430085787914845}

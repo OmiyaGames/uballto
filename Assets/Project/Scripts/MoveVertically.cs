@@ -31,7 +31,7 @@ public class MoveVertically : MonoBehaviour
         get => Mathf.Lerp(0, (Mathf.PI * 2f), startAt);
     }
 
-    private void Start()
+    private void Awake()
     {
         initialPosition = Body.position;
         timePassed = 0f;

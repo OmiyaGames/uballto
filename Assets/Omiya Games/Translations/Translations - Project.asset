@@ -31,18 +31,20 @@ MonoBehaviour:
   - key: Credits Full
     allTranslations:
     - languageIndex: 0
-      text: "Created by Omiya Games\r\n\r\n<b>Programming</b>\r\nTaro Omiya\r\n\r\n<b>Sprites</b>\r\n\"Silhouette
+      text: "Created by Omiya Games\r\n\r\n<b>Programming</b>\r\nTaro Omiya\r\n\r\n<b>Images</b>\r\n\"Silhouette
         Photo of a Mountain during Sunset\"\r\nby veeterzy\r\n<size=38>Licensed under
         Pexels</size>\r\n<size=38><u>pexels.com/photo/silhouette-photo-of-a-mountain-during-sunset-114979</u></size>\r\n\r\n\"Football\"\r\nby
         OpenClipart-Vectors\r\n<size=38>Licensed under Pixabay</size>\r\n<size=38><u>pixabay.com/vectors/football-ball-sport-soccer-round-157930</u></size>\r\n\r\n\"Checkered
-        Flag\"\r\nby Clker-Free-Vector-Images\r\n<size=38>Licensed under Pixabay</size>\r\n<size=38><u>pixabay.com/vectors/flag-chequered-finishing-race-cars-36198</u></size>\r\n\r\nAll
+        Flag\"\r\nby Clker-Free-Vector-Images\r\n<size=38>Licensed under Pixabay</size>\r\n<size=38><u>pixabay.com/vectors/flag-chequered-finishing-race-cars-36198</u></size>\r\n\r\nGround
+        and Water\r\nby drummyfish\r\n<size=38>Under Public Domain</size>\r\n<size=38><u>opengameart.org/content/40-procedural-textures</u></size>\r\n\r\nAll
         Mouse Cursors\r\nby Freepik\r\n<size=38>Licensed under Flat Icons</size>\r\n<size=38><u>flaticon.com/authors/freepik</u></size>\r\n\r\nRestart
         and Menu icons\r\nby Kenney\r\n<size=38>Under Public Domain</size>\r\n<size=38><u>kenney.nl/assets/game-icons</u></size>\r\n\r\nRest
         by Taro Omiya\r\n\r\n<b>Music</b>\r\n\"Funny Song\"\r\nby Benjamin Tissot
         (Bensound)\r\n<size=38>Licensed under Creative Commons</size>\r\n<size=38><u>bensound.com/royalty-free-music/track/funny-song</u></size>\r\n\r\n<b>Sound</b>\r\n\"Ball
         Pass\"\r\nby Stuart Duffield\r\n<size=38>Licensed under Sonniss</size>\r\n<size=38><u>sonniss.com</u></size>\r\n\r\n\"Water
         splashes in a roomy tub dunking slow and hard, x3\"\r\nby Paul Virostek\r\n<size=38>2013
-        Airborne Sound (Airborne Sound)</size>\r\n<size=38>Licensed under Sonniss</size>\r\n<size=38><u>airbornesound.com/downloads/bathroom-sound-effects</u></size>\r\n\r\n<b>Fonts</b>\r\n\"Noto
+        Airborne Sound (Airborne Sound)</size>\r\n<size=38>Licensed under Sonniss</size>\r\n<size=38><u>airbornesound.com/downloads/bathroom-sound-effects</u></size>\r\n\r\n<b>Fonts</b>\r\n\"Ubuntu
+        Font\"\r\nby Canonical\r\n<size=38>Licensed under Ubuntu Font Licence v1.0</size>\r\n<size=38><u>ubuntu.com/legal/font-licence</u></size>\r\n\r\n\"Noto
         Font\"\r\nby Google\r\n<size=38>Licensed under SIL Open Font License v1.1</size>\r\n<size=38><u>scripts.sil.org/OFL</u></size>\r\n\r\n<b>Special
         Thanks</b>\r\nTech Valley Game Space\r\nTech Valley Center of Gravity\r\nLudum
         Dare\r\n\r\nThanks for playing!"

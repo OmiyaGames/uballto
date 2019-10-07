@@ -120,6 +120,42 @@ MonoBehaviour:
       dictionary: {fileID: 11400000, guid: c3ca07e6811f27b4d82bb14629e8450c, type: 2}
     cursorMode: 0
     revertTimeScale: 1
+  - scenePath: Assets/Project/Scenes/Level 4.unity
+    displayName:
+      key: Level Button
+      dictionary: {fileID: 11400000, guid: c3ca07e6811f27b4d82bb14629e8450c, type: 2}
+    cursorMode: 0
+    revertTimeScale: 1
+  - scenePath: Assets/Project/Scenes/Level 5.unity
+    displayName:
+      key: Level Button
+      dictionary: {fileID: 11400000, guid: c3ca07e6811f27b4d82bb14629e8450c, type: 2}
+    cursorMode: 0
+    revertTimeScale: 1
+  - scenePath: Assets/Project/Scenes/Level 6.unity
+    displayName:
+      key: Level Button
+      dictionary: {fileID: 11400000, guid: c3ca07e6811f27b4d82bb14629e8450c, type: 2}
+    cursorMode: 0
+    revertTimeScale: 1
+  - scenePath: Assets/Project/Scenes/Level 7.unity
+    displayName:
+      key: Level Button
+      dictionary: {fileID: 11400000, guid: c3ca07e6811f27b4d82bb14629e8450c, type: 2}
+    cursorMode: 0
+    revertTimeScale: 1
+  - scenePath: Assets/Project/Scenes/Level 8.unity
+    displayName:
+      key: Level Button
+      dictionary: {fileID: 11400000, guid: c3ca07e6811f27b4d82bb14629e8450c, type: 2}
+    cursorMode: 0
+    revertTimeScale: 1
+  - scenePath: Assets/Project/Scenes/Level 9.unity
+    displayName:
+      key: Level Button
+      dictionary: {fileID: 11400000, guid: c3ca07e6811f27b4d82bb14629e8450c, type: 2}
+    cursorMode: 0
+    revertTimeScale: 1
   debugLockMode: 0
 --- !u!114 &11449788
 MonoBehaviour:

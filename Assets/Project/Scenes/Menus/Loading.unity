@@ -655,5 +655,42 @@ PrefabInstance:
       propertyPath: m_textInfo.materialCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6184958504746000134, guid: a165fa1c7b4d81d46a7cd866770acf8e,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1867285008822946934, guid: a165fa1c7b4d81d46a7cd866770acf8e,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1867285008822946934, guid: a165fa1c7b4d81d46a7cd866770acf8e,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7820490769061521959, guid: a165fa1c7b4d81d46a7cd866770acf8e,
+        type: 3}
+      propertyPath: m_Name
+      value: TMP SubMeshUI [NotoSansDisplay-Regular SDF Material + Ubuntu-AsciiExtend-Bold
+        Atlas]
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555618557856046672, guid: a165fa1c7b4d81d46a7cd866770acf8e,
+        type: 3}
+      propertyPath: m_Name
+      value: TMP SubMeshUI [NotoSansDisplay-Regular SDF Material + Ubuntu-AsciiExtend-Bold
+        Atlas]
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744163753522843112, guid: a165fa1c7b4d81d46a7cd866770acf8e,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744163753522843112, guid: a165fa1c7b4d81d46a7cd866770acf8e,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a165fa1c7b4d81d46a7cd866770acf8e, type: 3}

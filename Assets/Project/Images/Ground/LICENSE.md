@@ -8,7 +8,12 @@
 * "Checkered Flag" made by Clker-Free-Vector-Images
 * https://pixabay.com/vectors/flag-chequered-finishing-race-cars-36198/
 
-# texture5.png, texture26.png, & texture33.png
+# texture5.png, texture26.png, texture33.png, wall2.png, and steel_pattern.png
 
 * "Procedural Textures" made by drummyfish
 * https://opengameart.org/content/40-procedural-textures
+
+# RTS_Crate.png
+
+* "Wooden Box" made by Cpt_Flash
+* https://opengameart.org/content/2d-wooden-box

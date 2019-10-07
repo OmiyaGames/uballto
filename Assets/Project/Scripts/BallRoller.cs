@@ -4,13 +4,8 @@ using UnityEngine;
 using OmiyaGames.Audio;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class BallRoller : ISoundMaker
+public class BallRoller : Crate
 {
-    [SerializeField]
-    float stillTorque = 10f;
-    [SerializeField]
-    Vector2 stillForce;
-
     [Header("Music")]
     [SerializeField]
     AmbientMusic music;
@@ -21,17 +16,46 @@ public class BallRoller : ISoundMaker
     [SerializeField]
     float offsetPitch = 0.1f;
 
-    [Header("Sound")]
+    [Header("Movement")]
     [SerializeField]
-    SoundEffect defaultBoundsSound;
+    float stillTorque = 10f;
     [SerializeField]
-    SoundEffect waterSplashSound;
+    Vector2 stillForce;
+    [SerializeField]
+    bool moveRight = true;
 
-    Rigidbody2D body = null;
-
-    public Rigidbody2D Body
+    public bool MoveRight
     {
-        get => OmiyaGames.Utility.GetComponentCached(this, ref body);
+        get => moveRight;
+        set => moveRight = value;
+    }
+    public float StillTorque
+    {
+        get
+        {
+            if(MoveRight)
+            {
+                return stillTorque;
+            }
+            else
+            {
+                return -stillTorque;
+            }
+        }
+    }
+    public Vector2 StillForce
+    {
+        get
+        {
+            if (MoveRight)
+            {
+                return stillForce;
+            }
+            else
+            {
+                return new Vector2(stillForce.x, stillForce.y);
+            }
+        }
     }
 
     private void Start()
@@ -43,8 +67,8 @@ public class BallRoller : ISoundMaker
     {
         if(Body.bodyType == RigidbodyType2D.Dynamic)
         {
-            Body.AddTorque(stillTorque * Time.deltaTime, ForceMode2D.Force);
-            Body.AddForce(stillForce * Time.deltaTime, ForceMode2D.Force);
+            Body.AddTorque(StillTorque * Time.deltaTime, ForceMode2D.Force);
+            Body.AddForce(StillForce * Time.deltaTime, ForceMode2D.Force);
 
             // Change the music pitch based on velocity
             if(music.Audio.isPlaying == false)
@@ -59,16 +83,5 @@ public class BallRoller : ISoundMaker
         {
             music.Pause();
         }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        defaultBoundsSound.Play();
-    }
-
-    public override void OnEnterWater(WaterTrigger source)
-    {
-        base.OnEnterWater(source);
-        waterSplashSound.Play();
     }
 }

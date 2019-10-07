@@ -61,6 +61,7 @@ public class WindowRect : MonoBehaviour, IPointerDownHandler
             minimizeButton.isOn = true;
             minimizeButton.interactable = false;
         }
+        OnExpandToggleChanged(minimizeButton.isOn);
     }
 
     public void OnExpandToggleChanged(bool isExpanded)

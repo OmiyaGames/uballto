@@ -201,8 +201,17 @@ namespace OmiyaGames.Menus
             // If next scene is null, this is the first scene to load
             if (NextScene == null)
             {
-                // Indicate the next scene to load is the main menu
-                NextScene = Singleton.Get<SceneTransitionManager>().MainMenu;
+                // Check if we've played the game before
+                if(Settings.NumberOfTimesAppOpened == 0)
+                {
+                    // Indicate the next scene to load is the main menu
+                    NextScene = Singleton.Get<SceneTransitionManager>().Levels[0];
+                }
+                else
+                {
+                    // Indicate the next scene to load is the main menu
+                    NextScene = Singleton.Get<SceneTransitionManager>().MainMenu;
+                }
 
                 // Indicate we're working on verifying the build
                 checkBuildStatusMenu = Singleton.Get<MenuManager>().GetMenu<MalformedGameMenu>();

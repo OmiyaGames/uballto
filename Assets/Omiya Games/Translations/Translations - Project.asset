@@ -27,92 +27,25 @@ MonoBehaviour:
   - key: Controls
     allTranslations:
     - languageIndex: 0
-      text: Click, hold, and drag this dialog window to move it!
+      text: Drag this dialog window to move it!
   - key: Credits Full
     allTranslations:
     - languageIndex: 0
-      text: 'Created by Omiya Games
-
-
-        <b>Programming</b>
-
-        Taro Omiya
-
-
-        <b>Sprites</b>
-
-        "Silhouette Photo of a Mountain during Sunset"
-
-        by veeterzy
-
-        <size=38><u>pexels.com/photo/silhouette-photo-of-a-mountain-during-sunset-114979</u></size>
-
-
-        All Mouse Cursors
-
-        by Freepik
-
-        <size=38><u>flaticon.com/authors/freepik</u></size>
-
-
-        Restart and Menu icons
-
-        by Kenney
-
-        <size=38><u>kenney.nl/assets/game-icons</u></size>
-
-
-        Rest by Taro Omiya
-
-
-        <b>Music</b>
-
-        "Funny Song"
-
-        by Benjamin Tissot (Bensound)
-
-        <size=38><u>bensound.com/royalty-free-music/track/funny-song</u></size>
-
-
-        <b>Sound</b>
-
-        "Ball Pass"
-
-        by Stuart Duffield
-
-        <size=38><u>sonniss.com</u></size>
-
-
-        "Water splashes in a roomy tub dunking slow and hard, x3"
-
-        by Paul Virostek
-
-        <size=38>2013 Airborne Sound (Airborne Sound)
-
-        <u>airbornesound.com/downloads/bathroom-sound-effects</u></size>
-
-
-        <b>Fonts</b>
-
-        "Noto Font"
-
-        by Google
-
-        <size=38>Licensed under SIL Open Font License v1.1
-
-        <link="license-font"><u>scripts.sil.org/OFL</u></link></size>
-
-
-        <b>Special Thanks</b>
-
-        Tech Valley Game Space
-
-        Tech Valley Center of Gravity
-
-        Ludum Dare
-
-
-        Thanks for playing!'
+      text: "Created by Omiya Games\r\n\r\n<b>Programming</b>\r\nTaro Omiya\r\n\r\n<b>Sprites</b>\r\n\"Silhouette
+        Photo of a Mountain during Sunset\"\r\nby veeterzy\r\n<size=38>Licensed under
+        Pexels</size>\r\n<size=38><u>pexels.com/photo/silhouette-photo-of-a-mountain-during-sunset-114979</u></size>\r\n\r\n\"Football\"\r\nby
+        OpenClipart-Vectors\r\n<size=38>Licensed under Pixabay</size>\r\n<size=38><u>pixabay.com/vectors/football-ball-sport-soccer-round-157930</u></size>\r\n\r\n\"Checkered
+        Flag\"\r\nby Clker-Free-Vector-Images\r\n<size=38>Licensed under Pixabay</size>\r\n<size=38><u>pixabay.com/vectors/flag-chequered-finishing-race-cars-36198</u></size>\r\n\r\nAll
+        Mouse Cursors\r\nby Freepik\r\n<size=38>Licensed under Flat Icons</size>\r\n<size=38><u>flaticon.com/authors/freepik</u></size>\r\n\r\nRestart
+        and Menu icons\r\nby Kenney\r\n<size=38>Under Public Domain</size>\r\n<size=38><u>kenney.nl/assets/game-icons</u></size>\r\n\r\nRest
+        by Taro Omiya\r\n\r\n<b>Music</b>\r\n\"Funny Song\"\r\nby Benjamin Tissot
+        (Bensound)\r\n<size=38>Licensed under Creative Commons</size>\r\n<size=38><u>bensound.com/royalty-free-music/track/funny-song</u></size>\r\n\r\n<b>Sound</b>\r\n\"Ball
+        Pass\"\r\nby Stuart Duffield\r\n<size=38>Licensed under Sonniss</size>\r\n<size=38><u>sonniss.com</u></size>\r\n\r\n\"Water
+        splashes in a roomy tub dunking slow and hard, x3\"\r\nby Paul Virostek\r\n<size=38>2013
+        Airborne Sound (Airborne Sound)</size>\r\n<size=38>Licensed under Sonniss</size>\r\n<size=38><u>airbornesound.com/downloads/bathroom-sound-effects</u></size>\r\n\r\n<b>Fonts</b>\r\n\"Noto
+        Font\"\r\nby Google\r\n<size=38>Licensed under SIL Open Font License v1.1</size>\r\n<size=38><u>scripts.sil.org/OFL</u></size>\r\n\r\n<b>Special
+        Thanks</b>\r\nTech Valley Game Space\r\nTech Valley Center of Gravity\r\nLudum
+        Dare\r\n\r\nThanks for playing!"
     - languageIndex: 1
       text: 
     - languageIndex: 2
@@ -136,7 +69,7 @@ MonoBehaviour:
   - key: Instructions
     allTranslations:
     - languageIndex: 0
-      text: 'Guide the ball to the goal post!
+      text: 'Guide the ball to the flag!
 
 
         <b>Controls:</b>
@@ -172,7 +105,7 @@ MonoBehaviour:
   - key: Objective
     allTranslations:
     - languageIndex: 0
-      text: Make the Ball Roll Into the Goal!
+      text: Guide the Ball to the Flag!
   - key: Objective Label
     allTranslations: []
   - key: Restart

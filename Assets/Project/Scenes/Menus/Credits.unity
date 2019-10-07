@@ -515,6 +515,147 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1385083210610977998, guid: e34db13fc4f4b7b4fbfd6fe479a89a4e,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 1223
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385083210610977998, guid: e34db13fc4f4b7b4fbfd6fe479a89a4e,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 146
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385083210610977998, guid: e34db13fc4f4b7b4fbfd6fe479a89a4e,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 161
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385083210610977998, guid: e34db13fc4f4b7b4fbfd6fe479a89a4e,
+        type: 3}
+      propertyPath: m_textInfo.linkCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385083210610977998, guid: e34db13fc4f4b7b4fbfd6fe479a89a4e,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 63
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385083210610977998, guid: e34db13fc4f4b7b4fbfd6fe479a89a4e,
+        type: 3}
+      propertyPath: m_text
+      value: 'Created by Omiya Games
+
+
+        <b>Programming</b>
+
+        Taro Omiya
+
+
+        <b>Sprites</b>
+
+        "Silhouette Photo of a Mountain during Sunset"
+
+        by veeterzy
+
+        <size=38>Licensed under Pexels</size>
+
+        <size=38><u>pexels.com/photo/silhouette-photo-of-a-mountain-during-sunset-114979</u></size>
+
+
+        "Football"
+
+        by OpenClipart-Vectors
+
+        <size=38>Licensed under Pixabay</size>
+
+        <size=38><u>pixabay.com/vectors/football-ball-sport-soccer-round-157930</u></size>
+
+
+        "Checkered Flag"
+
+        by Clker-Free-Vector-Images
+
+        <size=38>Licensed under Pixabay</size>
+
+        <size=38><u>pixabay.com/vectors/flag-chequered-finishing-race-cars-36198</u></size>
+
+
+        All Mouse Cursors
+
+        by Freepik
+
+        <size=38>Licensed under Flat Icons</size>
+
+        <size=38><u>flaticon.com/authors/freepik</u></size>
+
+
+        Restart and Menu icons
+
+        by Kenney
+
+        <size=38>Under Public Domain</size>
+
+        <size=38><u>kenney.nl/assets/game-icons</u></size>
+
+
+        Rest by Taro Omiya
+
+
+        <b>Music</b>
+
+        "Funny Song"
+
+        by Benjamin Tissot (Bensound)
+
+        <size=38>Licensed under Creative Commons</size>
+
+        <u>bensound.com/royalty-free-music/track/funny-song</u></size>
+
+
+        <b>Sound</b>
+
+        "Ball Pass"
+
+        by Stuart Duffield
+
+        <size=38>Licensed under Sonniss</size>
+
+        <size=38><u>sonniss.com</u></size>
+
+
+        "Water splashes in a roomy tub dunking slow and hard, x3"
+
+        by Paul Virostek
+
+        <size=38>2013 Airborne Sound (Airborne Sound)</size>
+
+        <size=38>Licensed under Sonniss</size>
+
+        <size=38><u>airbornesound.com/downloads/bathroom-sound-effects</u></size>
+
+
+        <b>Fonts</b>
+
+        "Noto Font"
+
+        by Google
+
+        <size=38>Licensed under SIL Open Font License v1.1</size>
+
+        <size=38><link="license-font"><u>scripts.sil.org/OFL</u></link></size>
+
+
+        <b>Special Thanks</b>
+
+        Tech Valley Game Space
+
+        Tech Valley Center of Gravity
+
+        Ludum Dare
+
+
+        Thanks for playing!'
+      objectReference: {fileID: 0}
     - target: {fileID: 1385029868376586734, guid: e34db13fc4f4b7b4fbfd6fe479a89a4e,
         type: 3}
       propertyPath: m_Material
@@ -599,6 +740,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346333748268914278, guid: e34db13fc4f4b7b4fbfd6fe479a89a4e,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346333748268914278, guid: e34db13fc4f4b7b4fbfd6fe479a89a4e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346333748268914278, guid: e34db13fc4f4b7b4fbfd6fe479a89a4e,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1275447667191042904, guid: e34db13fc4f4b7b4fbfd6fe479a89a4e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 30.000061
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e34db13fc4f4b7b4fbfd6fe479a89a4e, type: 3}

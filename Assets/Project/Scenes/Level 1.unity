@@ -470,7 +470,7 @@ PrefabInstance:
     - target: {fileID: 380219808900515613, guid: ba3c4287fbd0a854aba6290ea5519e35,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.3
+      value: 8.06
       objectReference: {fileID: 0}
     - target: {fileID: 2570379050919334414, guid: ba3c4287fbd0a854aba6290ea5519e35,
         type: 3}
@@ -679,7 +679,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Click, hold, and drag this dialog window to move it!
+  m_text: Drag this dialog window to move it!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f8ea1375993da204da0d18cccab8a7e8, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 15244ca8ddadb494796796ef93f528a4, type: 2}
@@ -707,7 +707,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 18
+  m_fontSize: 18.35
   m_fontSizeBase: 12.09
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -724,7 +724,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 41
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -748,12 +748,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 531330270425391796}
-    characterCount: 52
+    characterCount: 35
     spriteCount: 0
-    spaceCount: 9
-    wordCount: 10
+    spaceCount: 6
+    wordCount: 7
     linkCount: 0
-    lineCount: 4
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0

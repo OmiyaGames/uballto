@@ -4,7 +4,7 @@ using UnityEngine;
 using OmiyaGames.Audio;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class BallRoller : MonoBehaviour
+public class BallRoller : ISoundMaker
 {
     [SerializeField]
     float stillTorque = 10f;
@@ -24,6 +24,8 @@ public class BallRoller : MonoBehaviour
     [Header("Sound")]
     [SerializeField]
     SoundEffect defaultBoundsSound;
+    [SerializeField]
+    SoundEffect waterSplashSound;
 
     Rigidbody2D body = null;
 
@@ -62,5 +64,11 @@ public class BallRoller : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         defaultBoundsSound.Play();
+    }
+
+    public override void OnEnterWater(WaterTrigger source)
+    {
+        base.OnEnterWater(source);
+        waterSplashSound.Play();
     }
 }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3441138515779212537}
   - component: {fileID: 9115999409931366207}
+  - component: {fileID: 7807164254161680990}
   m_Layer: 5
   m_Name: Wallpaper UI
   m_TagString: Untagged
@@ -58,6 +59,28 @@ Canvas:
   m_SortingLayerID: 933024433
   m_SortingOrder: -10
   m_TargetDisplay: 0
+--- !u!114 &7807164254161680990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477347989822381336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ScreenMatchMode: 1
+  m_MatchWidthOrHeight: 1
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
 --- !u!1 &718656374878997438
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,6 +426,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4604733809169266803}
   - component: {fileID: 6414256277879773781}
+  - component: {fileID: 4011356376723456107}
   m_Layer: 0
   m_Name: Wallpaper Background
   m_TagString: Untagged
@@ -440,7 +464,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 2297969470193597048}
   m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -451,6 +475,28 @@ Canvas:
   m_SortingLayerID: -401934673
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &4011356376723456107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2570379050919334414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ScreenMatchMode: 1
+  m_MatchWidthOrHeight: 1
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
 --- !u!1 &2823138910763850048
 GameObject:
   m_ObjectHideFlags: 0
@@ -1985,15 +2031,15 @@ Camera:
     type: 3}
   m_PrefabInstance: {fileID: 2282383844725593808}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2281091089504970256 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1328490220957888, guid: 0cb066fb0f0cf4a43a8d239b0f1b221e,
-    type: 3}
-  m_PrefabInstance: {fileID: 2282383844725593808}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2279634737510378444 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4023888741137692, guid: 0cb066fb0f0cf4a43a8d239b0f1b221e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2282383844725593808}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2281091089504970256 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1328490220957888, guid: 0cb066fb0f0cf4a43a8d239b0f1b221e,
     type: 3}
   m_PrefabInstance: {fileID: 2282383844725593808}
   m_PrefabAsset: {fileID: 0}
@@ -2093,7 +2139,7 @@ PrefabInstance:
     - target: {fileID: 5485337684901379661, guid: b893552133eb36a4083bc36471a21a13,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.22
+      value: 7.77
       objectReference: {fileID: 0}
     - target: {fileID: 5485337684901379661, guid: b893552133eb36a4083bc36471a21a13,
         type: 3}
@@ -2104,26 +2150,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5485337684901379661, guid: b893552133eb36a4083bc36471a21a13,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5485337684901379661, guid: b893552133eb36a4083bc36471a21a13,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5485337684901379661, guid: b893552133eb36a4083bc36471a21a13,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5485337684901379661, guid: b893552133eb36a4083bc36471a21a13,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5485337684901379661, guid: b893552133eb36a4083bc36471a21a13,
         type: 3}

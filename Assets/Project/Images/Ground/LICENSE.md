@@ -16,4 +16,4 @@
 # RTS_Crate.png
 
 * "Wooden Box" made by Cpt_Flash
-* https://https://opengameart.org/content/2d-wooden-box
+* https://opengameart.org/content/2d-wooden-box

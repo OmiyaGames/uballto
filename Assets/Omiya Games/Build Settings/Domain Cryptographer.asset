@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13db1e8073604b243881642ebdefa7bb, type: 3}
   m_Name: Domain Cryptographer
   m_EditorClassIdentifier: 
-  passwordHash: GVI#Dk303o8~Y4QfJ'Ykd1lTL!xgkOZ@
-  saltKey: tfh6WiyNi1SI2Wf1kv-iOtP`#t}0Y!R_
-  viKey: A-dvNYPP2OSDjOdxdi
+  passwordHash: SEW\Gd5>iQA|\E[eU0.=j4KfD`I%Wd@L
+  saltKey: '|u1Pu!b.Un27g\mD7_IGpHZ}RT~D_Tp>'
+  viKey: IV%g%`qMC~c!,ZMLp_

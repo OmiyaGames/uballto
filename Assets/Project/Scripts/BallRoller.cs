@@ -11,7 +11,7 @@ public class BallRoller : MonoBehaviour
     [SerializeField]
     Vector2 stillForce;
 
-    [Header("Audio")]
+    [Header("Music")]
     [SerializeField]
     AmbientMusic music;
     [SerializeField]
@@ -20,6 +20,10 @@ public class BallRoller : MonoBehaviour
     float velocityToPitchMultiplier = 0.25f;
     [SerializeField]
     float offsetPitch = 0.1f;
+
+    [Header("Sound")]
+    [SerializeField]
+    SoundEffect defaultBoundsSound;
 
     Rigidbody2D body = null;
 
@@ -53,5 +57,10 @@ public class BallRoller : MonoBehaviour
         {
             music.Pause();
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        defaultBoundsSound.Play();
     }
 }

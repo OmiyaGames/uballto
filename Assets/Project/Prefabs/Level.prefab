@@ -75,7 +75,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 1
+  m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -159,8 +159,8 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 1
-  m_MatchWidthOrHeight: 1
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -224,6 +224,7 @@ GameObject:
   - component: {fileID: 7099641922896807897}
   - component: {fileID: 3730163058314334242}
   - component: {fileID: 1745835872437430824}
+  - component: {fileID: 377685952024271659}
   m_Layer: 0
   m_Name: Water Camera
   m_TagString: Untagged
@@ -308,6 +309,18 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &377685952024271659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937903438010434448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57d6f8d20575c634998144f2cea7f7d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &958558282702171745
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,6 +429,18 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &2094371969253086399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2281091089504970256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57d6f8d20575c634998144f2cea7f7d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2570379050919334414
 GameObject:
   m_ObjectHideFlags: 0
@@ -1163,7 +1188,8 @@ MonoBehaviour:
   m_text: Restart
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f8ea1375993da204da0d18cccab8a7e8, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 15244ca8ddadb494796796ef93f528a4, type: 2}
+  m_sharedMaterial: {fileID: 21311141302417280, guid: f8ea1375993da204da0d18cccab8a7e8,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1395,6 +1421,7 @@ GameObject:
   - component: {fileID: 2262463099325493732}
   - component: {fileID: 8997903214734020811}
   - component: {fileID: 3843011052027949039}
+  - component: {fileID: 7184454738708292036}
   m_Layer: 0
   m_Name: Base Camera
   m_TagString: Untagged
@@ -1479,6 +1506,18 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &7184454738708292036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8882768418738317405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57d6f8d20575c634998144f2cea7f7d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8937828742683217767
 GameObject:
   m_ObjectHideFlags: 0
@@ -1729,7 +1768,8 @@ MonoBehaviour:
   m_text: Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f8ea1375993da204da0d18cccab8a7e8, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 15244ca8ddadb494796796ef93f528a4, type: 2}
+  m_sharedMaterial: {fileID: 21311141302417280, guid: f8ea1375993da204da0d18cccab8a7e8,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2019,7 +2059,7 @@ PrefabInstance:
     - target: {fileID: 20458670678699176, guid: 0cb066fb0f0cf4a43a8d239b0f1b221e,
         type: 3}
       propertyPath: m_AllowMSAA
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114535535390581886, guid: 0cb066fb0f0cf4a43a8d239b0f1b221e, type: 3}
@@ -2031,15 +2071,15 @@ Camera:
     type: 3}
   m_PrefabInstance: {fileID: 2282383844725593808}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &2279634737510378444 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4023888741137692, guid: 0cb066fb0f0cf4a43a8d239b0f1b221e,
-    type: 3}
-  m_PrefabInstance: {fileID: 2282383844725593808}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2281091089504970256 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1328490220957888, guid: 0cb066fb0f0cf4a43a8d239b0f1b221e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2282383844725593808}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2279634737510378444 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4023888741137692, guid: 0cb066fb0f0cf4a43a8d239b0f1b221e,
     type: 3}
   m_PrefabInstance: {fileID: 2282383844725593808}
   m_PrefabAsset: {fileID: 0}

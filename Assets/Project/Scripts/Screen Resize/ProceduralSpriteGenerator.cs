@@ -37,14 +37,13 @@ public class ProceduralSpriteGenerator : IScreenResizeDetector
 
     private class TextureInfo
     {
-        public TextureInfo(WindowLayer layer, RenderTexture texture, Camera camera)
+        public TextureInfo(WindowLayer layer, RenderTexture texture)
         {
-            this.Layer = layer;
-            this.Texture = texture;
-            this.Camera = camera;
+            Layer = layer;
+            Texture = texture;
         }
 
-        public Camera Camera { get; } = null;
+        public Camera Camera { get; set; } = null;
         public WindowLayer Layer { get; }
         public RenderTexture Texture { get; }
     }
@@ -78,14 +77,22 @@ public class ProceduralSpriteGenerator : IScreenResizeDetector
                 newRenderTexture.name = layer.ToString();
 
                 // Add the texture into the dictionary
-                allTextures.Add(layer, new TextureInfo(layer, newRenderTexture, set.Camera));
-                set.Setup();
+                allTextures.Add(layer, new TextureInfo(layer, newRenderTexture));
             }
         }
     }
 
     private void Start()
     {
+        TextureInfo textureInfo;
+        foreach (TextureSetter set in renderCameras)
+        {
+            if(allTextures.TryGetValue(set.Layer, out textureInfo))
+            {
+                textureInfo.Camera = set.Camera;
+                set.Setup();
+            }
+        }
     }
 
     private void OnApplicationQuit()
@@ -102,7 +109,10 @@ public class ProceduralSpriteGenerator : IScreenResizeDetector
             foreach (TextureInfo info in allTextures.Values)
             {
                 // Destroy the texture and sprite
-                info.Camera.targetTexture = null;
+                if(info.Camera != null)
+                {
+                    info.Camera.targetTexture = null;
+                }
                 Destroy(info.Texture);
             }
 

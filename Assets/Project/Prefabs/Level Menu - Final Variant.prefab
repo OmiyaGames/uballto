@@ -67,6 +67,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3270824192491659459, guid: 24d041632296858438041a032bf4bde5,
+        type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3270824192491659459, guid: 24d041632296858438041a032bf4bde5,
+        type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3270824192517547221, guid: 24d041632296858438041a032bf4bde5,
         type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
@@ -76,6 +86,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3270824194098102562, guid: 24d041632296858438041a032bf4bde5,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3270824194076413560, guid: 24d041632296858438041a032bf4bde5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3270824193061646018, guid: 24d041632296858438041a032bf4bde5,
         type: 3}
@@ -105,7 +125,7 @@ PrefabInstance:
     - target: {fileID: 3241481910959041738, guid: 24d041632296858438041a032bf4bde5,
         type: 3}
       propertyPath: m_fontSize
-      value: 129.4
+      value: 157
       objectReference: {fileID: 0}
     - target: {fileID: 3241481910959041738, guid: 24d041632296858438041a032bf4bde5,
         type: 3}
@@ -161,6 +181,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3241513835105958984, guid: 24d041632296858438041a032bf4bde5,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5853056469836737376, guid: 24d041632296858438041a032bf4bde5,
         type: 3}

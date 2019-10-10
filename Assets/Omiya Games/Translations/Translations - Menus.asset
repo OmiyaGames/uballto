@@ -536,7 +536,7 @@ MonoBehaviour:
   - key: Resume
     allTranslations:
     - languageIndex: 0
-      text: Resume
+      text: Resume {0}
     - languageIndex: 1
       text: 
     - languageIndex: 2

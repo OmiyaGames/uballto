@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpriteMaskEditor : MonoBehaviour
+public class SpriteMaskEditor : IScreenResizeDetector
 {
     public class WindowInfo
     {
@@ -24,6 +24,7 @@ public class SpriteMaskEditor : MonoBehaviour
 
     List<WindowInfo> allWindows = null;
     Dictionary<DragDrop, WindowInfo> dragToWindowMap = null;
+    bool isSetup = false;
 
     #region Properties
     /// <summary>
@@ -54,12 +55,20 @@ public class SpriteMaskEditor : MonoBehaviour
     }
     #endregion
 
+    public override void OnScreenSizeChanged(int lastScreenWidth, int lastScreenHeight, float lastScreenResolution)
+    {
+        if (isSetup)
+        {
+            foreach (WindowInfo info in AllWindows)
+            {
+                info.Window.Display.texture = ProceduralSpriteGenerator.GetTexture(info.Window.DisplayLayer);
+            }
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        // FIXME: figure out which render texture to release resources from
-        HashSet<ProceduralSpriteGenerator.WindowLayer> activeLayers = new HashSet<ProceduralSpriteGenerator.WindowLayer>();
-
         // Calculate the screen corners
         foreach (Transform child in transform)
         {
@@ -76,28 +85,16 @@ public class SpriteMaskEditor : MonoBehaviour
 
                 // Apply the texture to the window's display
                 script.Display.texture = ProceduralSpriteGenerator.GetTexture(script.DisplayLayer);
-
-                // Add this window's layer into the active set
-                activeLayers.Add(script.DisplayLayer);
             }
         }
-
-        // Go through all layers
-        ProceduralSpriteGenerator.WindowLayer layer;
-        for (int layerId = 0; layerId < ProceduralSpriteGenerator.NumberOfLayers; ++layerId)
-        {
-            layer = (ProceduralSpriteGenerator.WindowLayer)layerId;
-            if (activeLayers.Contains(layer) == false)
-            {
-                // Release the unused textures
-                ProceduralSpriteGenerator.GetTexture(layer).Release();
-            }
-        }
+        isSetup = true;
     }
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
+        base.Update();
+
         // Setup some variables
         Rect updateRect = new Rect();
         Vector3 bottomLeftViewportPosition, topRightViewportPosition;

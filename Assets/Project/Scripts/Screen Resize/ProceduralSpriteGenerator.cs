@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProceduralSpriteGenerator : MonoBehaviour
+public class ProceduralSpriteGenerator : IScreenResizeDetector
 {
-    public const int NumberOfLayers = 1 + (int)WindowLayer.BaseAndWater;
+    public const int NumberOfLayers = (int)WindowLayer.AllLayers;
 
     public enum WindowLayer
     {
         Base,
         BaseAndWater,
         //BaseAndWind,
-        //AllLayers
+        AllLayers
     }
 
     [System.Serializable]
@@ -23,17 +23,33 @@ public class ProceduralSpriteGenerator : MonoBehaviour
         Camera camera;
 
         public WindowLayer Layer { get => layer; }
+        public Camera Camera { get => camera; }
 
         public void Setup()
         {
-            if (camera != null)
+            if (Camera != null)
             {
-                camera.targetTexture = GetTexture(Layer);
+                Camera.targetTexture = GetTexture(Layer);
+                Camera.forceIntoRenderTexture = true;
             }
         }
     }
 
-    private static readonly Dictionary<WindowLayer, RenderTexture> allTextures = new Dictionary<WindowLayer, RenderTexture>(NumberOfLayers);
+    private class TextureInfo
+    {
+        public TextureInfo(WindowLayer layer, RenderTexture texture, Camera camera)
+        {
+            this.Layer = layer;
+            this.Texture = texture;
+            this.Camera = camera;
+        }
+
+        public Camera Camera { get; } = null;
+        public WindowLayer Layer { get; }
+        public RenderTexture Texture { get; }
+    }
+
+    private static readonly Dictionary<WindowLayer, TextureInfo> allTextures = new Dictionary<WindowLayer, TextureInfo>(NumberOfLayers);
 
     [SerializeField]
     Camera orthogonalCamera;
@@ -43,49 +59,51 @@ public class ProceduralSpriteGenerator : MonoBehaviour
 
     public static RenderTexture GetTexture(WindowLayer layer)
     {
-        return allTextures[layer];
+        return allTextures[layer].Texture;
     }
 
-    // Start is called before the first frame update
-    void Awake()
+    public override void OnScreenSizeChanged(int lastScreenWidth, int lastScreenHeight, float lastScreenResolution)
     {
-        // If allSprites is already filled, don't do anything!
-        if (allTextures.Count > 0)
+        // Check if not setup yet, or the screen resolution really did change
+        if ((allTextures.Count == 0) || (Screen.width != lastScreenWidth) || (Screen.height != lastScreenHeight))
         {
-            return;
-        }
+            CleanUpTextures();
 
-        // Go through all the layers
-        WindowLayer layer;
-        for (int layerId = 0; layerId < NumberOfLayers; ++layerId)
-        {
-            layer = (WindowLayer)layerId;
-            RenderTexture newRenderTexture = new RenderTexture(Screen.width, Screen.height, 16, RenderTextureFormat.Default, 0);
-            newRenderTexture.name = layer.ToString();
+            // Go through all the layers
+            WindowLayer layer;
+            foreach (TextureSetter set in renderCameras)
+            {
+                layer = set.Layer;
+                RenderTexture newRenderTexture = new RenderTexture(Screen.width, Screen.height, 16, RenderTextureFormat.Default, 0);
+                newRenderTexture.name = layer.ToString();
 
-            // Add the texture into the dictionary
-            allTextures.Add(layer, newRenderTexture);
+                // Add the texture into the dictionary
+                allTextures.Add(layer, new TextureInfo(layer, newRenderTexture, set.Camera));
+                set.Setup();
+            }
         }
     }
 
     private void Start()
     {
-        foreach (TextureSetter set in renderCameras)
-        {
-            set.Setup();
-        }
     }
 
     private void OnApplicationQuit()
+    {
+        CleanUpTextures();
+    }
+
+    private void CleanUpTextures()
     {
         // Check if allSprites is filled
         if (allTextures.Count > 0)
         {
             // Go through all the values
-            foreach (RenderTexture texture in allTextures.Values)
+            foreach (TextureInfo info in allTextures.Values)
             {
                 // Destroy the texture and sprite
-                Destroy(texture);
+                info.Camera.targetTexture = null;
+                Destroy(info.Texture);
             }
 
             // Clear the dictionary

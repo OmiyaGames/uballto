@@ -329,14 +329,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f5d52be877b614fb2b0b7a1dd58622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stillTorque: -120
-  stillForce: {x: 120, y: 0}
+  defaultBoundsSound: {fileID: 5082767300476403369}
+  waterSplashSound: {fileID: 869655973485918173}
   music: {fileID: 4230948324784723761}
   pitchRange: {x: 0.6, y: 2}
   velocityToPitchMultiplier: 0.3
   offsetPitch: 0.1
-  defaultBoundsSound: {fileID: 5082767300476403369}
-  waterSplashSound: {fileID: 869655973485918173}
+  stillTorque: -120
+  stillForce: {x: 120, y: 0}
+  moveRight: 1
 --- !u!1 &3607707331239460240
 GameObject:
   m_ObjectHideFlags: 0

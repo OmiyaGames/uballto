@@ -692,5 +692,10 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6832760559633467240, guid: a165fa1c7b4d81d46a7cd866770acf8e,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a165fa1c7b4d81d46a7cd866770acf8e, type: 3}

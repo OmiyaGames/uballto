@@ -42,6 +42,8 @@ namespace OmiyaGames.Menus
     {
         [Header("Pause Menu")]
         [SerializeField]
+        TranslatedTextMeshPro mResumeLabel = null;
+        [SerializeField]
         TranslatedTextMeshPro mRestartLabel = null;
         [SerializeField]
         TranslatedTextMeshPro mReturnToMenuLabel = null;
@@ -67,6 +69,7 @@ namespace OmiyaGames.Menus
             base.OnSetup();
 
             // Update labels
+            mResumeLabel.SetArguments(SceneChanger.CurrentScene.DisplayName);
             Manager.SetLabelTextToRestartCurrentScene(mRestartLabel);
             Manager.SetLabelTextToReturnToMenu(mReturnToMenuLabel);
         }

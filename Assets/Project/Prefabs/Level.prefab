@@ -371,7 +371,7 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
-  m_AllowMSAA: 1
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 1
   m_OcclusionCulling: 1
@@ -391,7 +391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RenderShadows: 0
   m_RequiresDepthTextureOption: 0
-  m_RequiresOpaqueTextureOption: 2
+  m_RequiresOpaqueTextureOption: 1
   m_RendererOverrideOption: 1
   m_RendererData: {fileID: 0}
   m_RequiresDepthTexture: 0
@@ -524,8 +524,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RenderShadows: 0
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
+  m_RequiresDepthTextureOption: 0
+  m_RequiresOpaqueTextureOption: 1
   m_RendererOverrideOption: 1
   m_RendererData: {fileID: 0}
   m_RequiresDepthTexture: 0
@@ -1652,7 +1652,7 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
-  m_AllowMSAA: 1
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 1
   m_OcclusionCulling: 1
@@ -1672,7 +1672,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RenderShadows: 0
   m_RequiresDepthTextureOption: 0
-  m_RequiresOpaqueTextureOption: 2
+  m_RequiresOpaqueTextureOption: 1
   m_RendererOverrideOption: 1
   m_RendererData: {fileID: 0}
   m_RequiresDepthTexture: 0
@@ -2232,13 +2232,14 @@ PrefabInstance:
     - target: {fileID: 20458670678699176, guid: 0cb066fb0f0cf4a43a8d239b0f1b221e,
         type: 3}
       propertyPath: m_AllowMSAA
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114535535390581886, guid: 0cb066fb0f0cf4a43a8d239b0f1b221e, type: 3}
     - {fileID: 81428408835554972, guid: 0cb066fb0f0cf4a43a8d239b0f1b221e, type: 3}
     - {fileID: 114054164015052852, guid: 0cb066fb0f0cf4a43a8d239b0f1b221e, type: 3}
     - {fileID: 114218902847715210, guid: 0cb066fb0f0cf4a43a8d239b0f1b221e, type: 3}
+    - {fileID: 6930909102176801386, guid: 0cb066fb0f0cf4a43a8d239b0f1b221e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0cb066fb0f0cf4a43a8d239b0f1b221e, type: 3}
 --- !u!1 &2281091089504970256 stripped
 GameObject:

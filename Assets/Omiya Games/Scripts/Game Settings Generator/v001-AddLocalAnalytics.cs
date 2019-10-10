@@ -35,7 +35,7 @@
     public class AddLocalAnalytics : SettingsVersionGeneratorDecorator
     {
         public const ushort AppVersion = 1;
-        public const int DefaultNumLevelsUnlocked = 8;
+        public const int DefaultNumLevelsUnlocked = 9;
         public const string DefaultNumLevelsUnlockedName = "DefaultNumLevelsUnlocked";
 
         public override ushort Version

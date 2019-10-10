@@ -450,6 +450,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!223 &1410178819 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 4990822581872121513, guid: ba3c4287fbd0a854aba6290ea5519e35,
+    type: 3}
+  m_PrefabInstance: {fileID: 171817413092890548}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1896714845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -562,25 +568,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1244311708345613925, guid: ba3c4287fbd0a854aba6290ea5519e35,
-        type: 3}
-      propertyPath: m_BodyType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1244311708345613925, guid: ba3c4287fbd0a854aba6290ea5519e35,
-        type: 3}
-      propertyPath: m_Mass
-      value: 0.70685834
-      objectReference: {fileID: 0}
     - target: {fileID: 380219808900515613, guid: ba3c4287fbd0a854aba6290ea5519e35,
         type: 3}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2570379050919334414, guid: ba3c4287fbd0a854aba6290ea5519e35,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6712536943601081539, guid: ba3c4287fbd0a854aba6290ea5519e35,
         type: 3}
@@ -750,6 +741,46 @@ PrefabInstance:
     - target: {fileID: 2232962996387976331, guid: ba3c4287fbd0a854aba6290ea5519e35,
         type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604733809169266803, guid: ba3c4287fbd0a854aba6290ea5519e35,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604733809169266803, guid: ba3c4287fbd0a854aba6290ea5519e35,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604733809169266803, guid: ba3c4287fbd0a854aba6290ea5519e35,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604733809169266803, guid: ba3c4287fbd0a854aba6290ea5519e35,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604733809169266803, guid: ba3c4287fbd0a854aba6290ea5519e35,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604733809169266803, guid: ba3c4287fbd0a854aba6290ea5519e35,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604733809169266803, guid: ba3c4287fbd0a854aba6290ea5519e35,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8622593930170663086, guid: ba3c4287fbd0a854aba6290ea5519e35,
+        type: 3}
+      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1004,6 +1035,11 @@ PrefabInstance:
     - target: {fileID: 7161391989543854009, guid: 7a3e4e162d4ebb4428f8c12248715d63,
         type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6952769760367773777, guid: 7a3e4e162d4ebb4428f8c12248715d63,
+        type: 3}
+      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1420,5 +1456,15 @@ PrefabInstance:
       propertyPath: parent
       value: 
       objectReference: {fileID: 645228814}
+    - target: {fileID: 8900242707513182998, guid: 929cefb39b2a904468eb9e1bc713bdd4,
+        type: 3}
+      propertyPath: objectsToMove.Array.data[0].parent
+      value: 
+      objectReference: {fileID: 645228814}
+    - target: {fileID: 8900242707513182998, guid: 929cefb39b2a904468eb9e1bc713bdd4,
+        type: 3}
+      propertyPath: objectsToMove.Array.data[1].parent
+      value: 
+      objectReference: {fileID: 1410178819}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 929cefb39b2a904468eb9e1bc713bdd4, type: 3}

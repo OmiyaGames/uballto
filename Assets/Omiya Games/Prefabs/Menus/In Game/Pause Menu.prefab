@@ -605,7 +605,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Restart
+  m_text: Restart {0}
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5a0a9b0a47e21b7478dd51583ce7edd4, type: 2}
   m_sharedMaterial: {fileID: 21687855418224584, guid: 5a0a9b0a47e21b7478dd51583ce7edd4,
@@ -2538,6 +2538,7 @@ MonoBehaviour:
   howToPlayButton: {fileID: 6707788294046035183}
   highScoresButton: {fileID: 6708057823679369395}
   levelSelectButton: {fileID: 6707923675240844793}
+  mResumeLabel: {fileID: 6707353439051007387}
   mRestartLabel: {fileID: 2560635373888915782}
   mReturnToMenuLabel: {fileID: 2561419344646863962}
 --- !u!114 &3860676670900111975
@@ -2731,7 +2732,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Resume
+  m_text: Resume {0}
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5a0a9b0a47e21b7478dd51583ce7edd4, type: 2}
   m_sharedMaterial: {fileID: 21687855418224584, guid: 5a0a9b0a47e21b7478dd51583ce7edd4,

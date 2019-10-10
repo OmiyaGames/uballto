@@ -4,21 +4,45 @@ using UnityEngine;
 
 public class ChangeParent : MonoBehaviour
 {
+    [System.Serializable]
+    public struct ParentTransformPair
+    {
+        [SerializeField]
+        Canvas parent;
+        [SerializeField]
+        RectTransform objectToMove;
+
+        public void Setup()
+        {
+            objectToMove.transform.SetParent(parent.transform, true);
+        }
+
+        public void MoveTo(Vector3 position)
+        {
+            objectToMove.position = position;
+        }
+    }
     [SerializeField]
-    RectTransform objectToMove;
+    DragDrop dragScript;
     [SerializeField]
     RectTransform objectToFollow;
     [SerializeField]
-    Canvas parent;
+    ParentTransformPair[] objectsToMove;
 
     private void Start()
     {
-        objectToMove.transform.SetParent(parent.transform, true);
+        foreach(ParentTransformPair pair in objectsToMove)
+        {
+            pair.Setup();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        objectToMove.position = objectToFollow.position;
+        foreach (ParentTransformPair pair in objectsToMove)
+        {
+            pair.MoveTo(objectToFollow.position);
+        }
     }
 }
